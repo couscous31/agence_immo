@@ -35,9 +35,9 @@ public class Client implements Serializable {
 	@JoinColumn(name = "c_id", referencedColumnName = "id_c")
 	private ConseillerImmobilier ci;
 
-	// Transfo assos avec classe standard
-	@ManyToMany(mappedBy = "listeClient")
-	private List<ClasseStandard> listeClasseStandard;
+//	// Transfo assos avec classe standard
+//	@ManyToMany(mappedBy = "listeClient")
+//	private List<ClasseStandard> listeClasseStandard;
 
 	// Transfo assos avec contrat
 	@OneToOne(mappedBy = "client")
