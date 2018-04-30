@@ -20,10 +20,10 @@
 	<bean id="dataSourceBean"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<!-- injecter les props de la connexion à la bd -->
-		<property name="driverClassName" value="${Jdbc.driver}" />
-		<property name="url" value="${Jdbc.url}" />
-		<property name="username" value="${Jdbc.user}" />
-		<property name="password" value="${Jdbc.mdp}" />
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.user}" />
+		<property name="password" value="${jdbc.mdp}" />
 	</bean>
 
 	<!-- déclaration du bean session factory -->
