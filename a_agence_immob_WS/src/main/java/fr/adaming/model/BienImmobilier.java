@@ -1,6 +1,7 @@
 package fr.adaming.model;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
@@ -11,7 +12,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -46,7 +51,23 @@ public class BienImmobilier {
 
 	
 	//transformations UML en java
+	//CLASSE STANDARD
+	@ManyToOne
+	@JoinColumn(name="cs_id", referencedColumnName="id")
+	private ClasseStandard classeStandard;
 	
+	//CONTRAT
+	@OneToOne(mappedBy="bi")
+	private Contrat contrat;
+	
+	//VISITE
+	@OneToMany(mappedBy="bienImmo")
+	private List<Visite> listeVisite;
+	
+	//PROPRIETAIRE
+	@ManyToOne
+	@JoinColumn(name="prop_id", referencedColumnName="id")
+	private Proprietaire proprietaire;
 
 	// constructeurs
 	public BienImmobilier() {
@@ -132,6 +153,57 @@ public class BienImmobilier {
 
 	public void setPrix(double prix) {
 		this.prix = prix;
+	}
+
+	
+	public byte[] getPhotoBI() {
+		return photoBI;
+	}
+
+	public void setPhotoBI(byte[] photoBI) {
+		this.photoBI = photoBI;
+	}
+
+	public String getImageBI() {
+		return imageBI;
+	}
+
+	public void setImageBI(String imageBI) {
+		this.imageBI = imageBI;
+	}
+
+	public ClasseStandard getClasseStandard() {
+		return classeStandard;
+	}
+
+	public void setClasseStandard(ClasseStandard classeStandard) {
+		this.classeStandard = classeStandard;
+	}
+
+	
+	
+	public Contrat getContrat() {
+		return contrat;
+	}
+
+	public void setContrat(Contrat contrat) {
+		this.contrat = contrat;
+	}
+
+	public List<Visite> getListeVisite() {
+		return listeVisite;
+	}
+
+	public void setListeVisite(List<Visite> listeVisite) {
+		this.listeVisite = listeVisite;
+	}
+
+	public Proprietaire getProprietaire() {
+		return proprietaire;
+	}
+
+	public void setProprietaire(Proprietaire proprietaire) {
+		this.proprietaire = proprietaire;
 	}
 
 	// to string

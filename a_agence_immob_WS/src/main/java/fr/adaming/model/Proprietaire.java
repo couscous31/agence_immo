@@ -1,12 +1,14 @@
 package fr.adaming.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -25,6 +27,10 @@ public class Proprietaire implements Serializable {
 	private String telPerso;
 	private String telPro;
 
+	//transformation uml en java
+	@OneToMany(mappedBy="proprietaire")
+	private List<BienImmobilier> listeBienImmobiliers;
+	
 	// contructeurs
 	public Proprietaire() {
 		super();
@@ -86,6 +92,15 @@ public class Proprietaire implements Serializable {
 
 	public void setTelPro(String telPro) {
 		this.telPro = telPro;
+	}
+
+
+	public List<BienImmobilier> getListeBienImmobiliers() {
+		return listeBienImmobiliers;
+	}
+
+	public void setListeBienImmobiliers(List<BienImmobilier> listeBienImmobiliers) {
+		this.listeBienImmobiliers = listeBienImmobiliers;
 	}
 
 	// ToString
