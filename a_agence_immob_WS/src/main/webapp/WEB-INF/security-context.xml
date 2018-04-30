@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+<!-- Localiser le fichier .properties -->
+	<context:property-placeholder location="classpath*:ds_infos.properties" />
+
+	<bean id="dataSourceBean1"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<!-- Injecter les propriétés à partir du fichier -->
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.user}" />
+		<property name="password" value="${jdbc.mdp}" />
+	</bean>
+	<!-- Configuration de la partie autorisation -->
+	<security:http>
+		<!-- Spécifier les url à sécuriser -->
+		<security:intercept-url pattern="/ws/conseiller/abc**"
+			access="ROLE_ADMIN" />
+		<!-- Définir une page formulaire de connexion -->
+		<security:form-login login-page="/login"
+			authentication-failure-url="/loginEchec" default-target-url="/ws/conseiller/accueil" login-processing-url="/connexion"/>
+		<security:access-denied-handler
+			error-page="/accessDenied" />
+		<security:logout logout-success-url="/logout" />
+
+	</security:http>
+	<!-- Configuration de la partie authentification -->
+	<security:authentication-manager>
+		<security:authentication-provider>
+			<security:jdbc-user-service
+				data-source-ref="dataSourceBean1"
+				users-by-username-query="select iduser,mdp,active from conseillers where iduser=?"
+				authorities-by-username-query="select c.iduser,r.rolename from conseillers c, roles r where c.id_c=r.c_id c.iduser=?" />
+		</security:authentication-provider>
+	</security:authentication-manager>
+</beans>
