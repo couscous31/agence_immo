@@ -93,6 +93,12 @@ public class ConseillerImmobilier implements Serializable {
 	public void setListeClients(List<Client> listeClients) {
 		this.listeClients = listeClients;
 	}
+	public List<Visite> getListeVisites() {
+		return listeVisites;
+	}
+	public void setListeVisites(List<Visite> listeVisites) {
+		this.listeVisites = listeVisites;
+	}
 	
 	
 	
