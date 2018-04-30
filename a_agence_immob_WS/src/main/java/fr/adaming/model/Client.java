@@ -104,13 +104,13 @@ public class Client implements Serializable {
 		this.ci = ci;
 	}
 
-	public List<ClasseStandard> getListeClasseStandard() {
-		return listeClasseStandard;
-	}
-
-	public void setListeClasseStandard(List<ClasseStandard> listeClasseStandard) {
-		this.listeClasseStandard = listeClasseStandard;
-	}
+//	public List<ClasseStandard> getListeClasseStandard() {
+//		return listeClasseStandard;
+//	}
+//
+//	public void setListeClasseStandard(List<ClasseStandard> listeClasseStandard) {
+//		this.listeClasseStandard = listeClasseStandard;
+//	}
 
 	public Contrat getContrat() {
 		return contrat;
