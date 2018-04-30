@@ -27,7 +27,7 @@ public class Role implements Serializable {
 
 	@ManyToOne
 	@JoinColumn(name = "c_id", referencedColumnName = "id_c")
-	private List<ConseillerImmobilier> listeConseillers;
+	private ConseillerImmobilier conseiller;
 
 	// Déclaration des constructeurs
 	public Role() {
@@ -62,12 +62,13 @@ public class Role implements Serializable {
 		this.rolename = rolename;
 	}
 
-	public List<ConseillerImmobilier> getListeConseillers() {
-		return listeConseillers;
+	public ConseillerImmobilier getConseiller() {
+		return conseiller;
 	}
 
-	public void setListeAgents(List<ConseillerImmobilier> listeConseillers) {
-		this.listeConseillers = listeConseillers;
+	public void setConseiller(ConseillerImmobilier conseiller) {
+		this.conseiller = conseiller;
 	}
 
+	
 }
