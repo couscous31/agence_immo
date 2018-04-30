@@ -36,8 +36,8 @@
 		<security:authentication-provider>
 			<security:jdbc-user-service
 				data-source-ref="dataSourceBean1"
-				users-by-username-query="select iduser,mdp,active from conseillers where iduser=?"
-				authorities-by-username-query="select c.iduser,r.rolename from conseillers c, roles r where c.id_c=r.c_id c.iduser=?" />
+				users-by-username-query="select idUsername,mdp,active from conseillers where idUsername=?"
+				authorities-by-username-query="select c.idUsername,r.rolename from conseillers c, roles r where c.id_c=r.c_id c.iduser=?" />
 		</security:authentication-provider>
 	</security:authentication-manager>
 </beans>
