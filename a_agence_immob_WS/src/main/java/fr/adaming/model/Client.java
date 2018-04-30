@@ -32,7 +32,7 @@ public class Client implements Serializable {
 
 	// Transfo assos avec conseiller immobilier
 	@ManyToOne
-	@JoinColumn(name = "a_id", referencedColumnName = "id_a")
+	@JoinColumn(name = "c_id", referencedColumnName = "id_c")
 	private ConseillerImmobilier ci;
 
 	// Transfo assos avec classe standard
