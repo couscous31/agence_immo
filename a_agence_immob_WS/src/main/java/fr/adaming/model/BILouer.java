@@ -2,6 +2,10 @@ package fr.adaming.model;
 
 import java.util.Date;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+@Entity
+@DiscriminatorValue(value="Louer")
 public class BILouer extends BienImmobilier {
 	
 	private double caution;
@@ -39,14 +43,6 @@ public class BILouer extends BienImmobilier {
 	public void setMeubles(boolean meubles) {
 		this.meubles = meubles;
 	}
-	public BILouer(double caution, double loyer, double charges, String typeBail, boolean meubles) {
-		super();
-		this.caution = caution;
-		this.loyer = loyer;
-		this.charges = charges;
-		this.typeBail = typeBail;
-		this.meubles = meubles;
-	}
 	public BILouer() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -61,11 +57,20 @@ public class BILouer extends BienImmobilier {
 		super(statut, dateSoumission, adresse, dateDispo, revenuCadastral, prix);
 		// TODO Auto-generated constructor stub
 	}
+	public BILouer(double caution, double loyer, double charges, String typeBail, boolean meubles) {
+		super();
+		this.caution = caution;
+		this.loyer = loyer;
+		this.charges = charges;
+		this.typeBail = typeBail;
+		this.meubles = meubles;
+	}
 	@Override
 	public String toString() {
 		return "BILouer [caution=" + caution + ", loyer=" + loyer + ", charges=" + charges + ", typeBail=" + typeBail
 				+ ", meubles=" + meubles + "]";
 	}
+	
 	
 	
 

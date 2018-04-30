@@ -2,6 +2,10 @@ package fr.adaming.model;
 
 import java.util.Date;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+@Entity
+@DiscriminatorValue(value="Acheter")
 public class BIAcheter extends BienImmobilier {
 	
 	private double prixAchat;
@@ -16,11 +20,6 @@ public class BIAcheter extends BienImmobilier {
 		return etat;
 	}
 	public void setEtat(String etat) {
-		this.etat = etat;
-	}
-	public BIAcheter(double prixAchat, String etat) {
-		super();
-		this.prixAchat = prixAchat;
 		this.etat = etat;
 	}
 	public BIAcheter() {
@@ -41,6 +40,7 @@ public class BIAcheter extends BienImmobilier {
 	public String toString() {
 		return "BIAcheter [prixAchat=" + prixAchat + ", etat=" + etat + "]";
 	}
+	
 
 	
 	
