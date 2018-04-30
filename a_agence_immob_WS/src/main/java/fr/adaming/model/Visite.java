@@ -36,6 +36,20 @@ public class Visite implements Serializable{
 	@JoinColumn(name="c_id", referencedColumnName="id_c")
 	private ConseillerImmobilier conseillerimmobilier;
 	
+	@ManyToOne
+	@JoinColumn(name="bi_id", referencedColumnName="id_bi")
+	private BienImmobilier bienImmo;
+	
+	public BienImmobilier getBienImmo() {
+		return bienImmo;
+	}
+
+
+	public void setBienImmo(BienImmobilier bienImmo) {
+		this.bienImmo = bienImmo;
+	}
+
+
 	public ConseillerImmobilier getConseillerimmobilier() {
 		return conseillerimmobilier;
 	}

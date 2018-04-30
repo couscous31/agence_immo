@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -26,8 +28,11 @@ public class ClasseStandard implements Serializable {
 	private double prixmax;
 	private double sufacemin;
 	
-	@ManyToMany
-	private List<Client> listeClient;
+//	@ManyToMany
+//	private List<Client> listeClient;
+	
+	@OneToMany(mappedBy="classeStandard")
+	private List<BienImmobilier> listeBienImmo;
 	
 	
 	//Constructeurs
@@ -94,12 +99,20 @@ public class ClasseStandard implements Serializable {
 		this.sufacemin = sufacemin;
 	}
 
-	public List<Client> getListeClient() {
-		return listeClient;
+//	public List<Client> getListeClient() {
+//		return listeClient;
+//	}
+//
+//	public void setListeClient(List<Client> listeClient) {
+//		this.listeClient = listeClient;
+//	}
+
+	public List<BienImmobilier> getListeBienImmo() {
+		return listeBienImmo;
 	}
 
-	public void setListeClient(List<Client> listeClient) {
-		this.listeClient = listeClient;
+	public void setListeBienImmo(List<BienImmobilier> listeBienImmo) {
+		this.listeBienImmo = listeBienImmo;
 	}
 	
 	
