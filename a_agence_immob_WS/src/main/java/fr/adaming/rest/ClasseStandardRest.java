@@ -1,6 +1,8 @@
 package fr.adaming.rest;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +28,28 @@ public class ClasseStandardRest {
 	public List<BienImmobilier> isExist() {
 		List<ClasseStandard> liste = classeStandardService.getAllClassStandard();
 		return biService.getAll();
+
+	}
+	
+	@RequestMapping(value = "/classeStandardPrix", method = RequestMethod.GET, produces = "application/json")
+	public Set<Double> getAllPrix() {
+		List<ClasseStandard> liste = classeStandardService.getAllClassStandard();
+		Set<Double> listePrix=new HashSet<Double>();
+		for (ClasseStandard cs : liste){
+			listePrix.add(cs.getPrixmax());
+		}
+		return listePrix;
+
+	}
+	
+	@RequestMapping(value = "/classeStandardSurface", method = RequestMethod.GET, produces = "application/json")
+	public Set<Double> getAllSurfaces() {
+		List<ClasseStandard> liste = classeStandardService.getAllClassStandard();
+		Set<Double> listeSurface=new HashSet<Double>();
+		for (ClasseStandard cs : liste){
+			listeSurface.add(cs.getSufacemin());
+		}
+		return listeSurface;
 
 	}
 }

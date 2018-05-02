@@ -1,0 +1,52 @@
+<input type="checkbox" ng-model="recherche.classeStandard.modeoffre"  ng-true-value="'Achat'" ng-false-value="''" />Achat
+<input type="checkbox" ng-model="recherche2.classeStandard.modeoffre"  ng-true-value="'Location'" ng-false-value="''" />Location
+<br/>
+Type de bien :
+<input type="input" ng-model="recherche.classeStandard.type"/>
+<br/>
+Surface : 
+<select ng-model="recherche.classeStandard.sufacemin">
+	<option value="">Surface minimale</option>
+	<option ng-repeat="s in listeSurface | orderBy">{{s}}</option>
+</select>
+<br/>
+Prix :
+<select ng-model="recherche.classeStandard.prixmax">
+	<option value="">Prix maximal</option>
+	<option ng-repeat="p in listePrix | orderBy">{{p}}</option>
+</select>
+
+<h1 style="color: lightgreen; text-align: center">Liste des
+	Bien immobiliers</h1>
+
+<br />
+
+<div align="center" class="table-responsive">
+
+	<table class="table table-hover" style="text-align: center;">
+
+		<tr>
+			<th style="text-align: center;">ID</th>
+			<th style="text-align: center;">Type</th>
+			<th style="text-align: center;">Offre</th>
+			<th style="text-align: center;">Date de disponibilité</th>
+			<th style="text-align: center;">Adresse</th>
+			<th style="text-align: center;">Code Postal</th>
+			<th style="text-align: center;">Ville</th>
+			<th style="text-align: center;">Prix</th>
+		</tr>
+
+		<tr ng-repeat="bi in listeBi | filter : recherche | filter : recherche2">
+			<td>{{bi.id}}</td>
+			<td>{{bi.classeStandard.type}}</td>
+			<td>{{bi.classeStandard.modeoffre}}</td>
+			<td>{{bi.dateDispo}}</td>
+			<td>{{bi.adresse.numero}} {{bi.adresse.rue}}</td>
+			<td>{{bi.adresse.codePostal}}</td>
+			<td>{{bi.adresse.ville}}</td>
+			<td>{{bi.prix}}</td>
+		</tr>
+
+	</table>
+
+</div>
