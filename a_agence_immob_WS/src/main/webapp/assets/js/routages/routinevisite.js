@@ -3,26 +3,26 @@ monApp.config(function($routeProvider) {
 
 	$routeProvider.when('/listevi', {
 		controller : "listeviCtrl",
-		templateUrl : "vue/listevi.html"
+		templateUrl : "vues/listevi.html"
 	})
 
 		.when('/rechvi', {
 		controller : "getbyidviCtrl",
-		templateUrl : "vue/recherchevi.html"
+		templateUrl : "vues/recherchevi.html"
 	})
 	
 	.when('/addvi',{
 		controller: "ajoutviCtrl",
-		templateUrl: "vue/ajoutervi.html"
+		templateUrl: "vues/ajoutervi.html"
 	})
 
 	.when('/suppvi', {
 		controller : "supprviCtrl",
-		templateUrl : "vue/supprimervi.html"
+		templateUrl : "vues/supprimervi.html"
 	})
 	.when('/modifvi', {
 		controller : "modifviCtrl",
-		templateUrl : "vue/modifiervi.html"
+		templateUrl : "vues/modifiervi.html"
 	})
 	
 	.otherwise({redirectTo:'/listevi'})

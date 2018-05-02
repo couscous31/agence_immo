@@ -1,0 +1,17 @@
+<h1 style="text-align: center; color: purple">Liste de visite</h1>
+
+<table class="table">
+	<tr>
+		<th>ID</th>
+		<th>DATE DE VISITE</th>
+		<th>HEURE</th>
+		<th>BIEN</th>
+	</tr>
+
+	<tr ng-repeat="vi in listevi">
+		<td>{{vi.id}}</td>
+		<td>{{vi.datevisite}}</td>
+		<td>{{vi.heure}}</td>
+		<td>{{vi.bienimmo.id}}</td>
+
+	</tr>
