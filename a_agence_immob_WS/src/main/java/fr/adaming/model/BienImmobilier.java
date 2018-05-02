@@ -23,6 +23,8 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "bien_immobiliers")
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
@@ -61,6 +63,7 @@ public class BienImmobilier {
 	private Contrat contrat;
 	
 	//VISITE
+	@JsonIgnore
 	@OneToMany(mappedBy="bienImmo")
 	private List<Visite> listeVisite;
 	
