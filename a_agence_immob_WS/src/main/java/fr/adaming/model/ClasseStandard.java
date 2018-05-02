@@ -15,6 +15,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import org.hibernate.annotations.ManyToAny;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="classesStandards")
 @XmlRootElement
@@ -31,6 +33,7 @@ public class ClasseStandard implements Serializable {
 //	@ManyToMany
 //	private List<Client> listeClient;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="classeStandard")
 	private List<BienImmobilier> listeBienImmo;
 	
