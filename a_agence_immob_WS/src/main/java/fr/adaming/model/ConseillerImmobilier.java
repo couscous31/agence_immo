@@ -12,6 +12,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="conseillers")
 @XmlRootElement
@@ -29,12 +31,15 @@ public class ConseillerImmobilier implements Serializable {
 	
 	//Associations
 	@OneToMany(mappedBy="conseiller")
+	@JsonIgnore
 	private List<Role> roles;
 	
 	@OneToMany(mappedBy="ci")
+	@JsonIgnore
 	private List<Client> listeClients;
 	
 	@OneToMany(mappedBy="conseillerimmobilier")
+	@JsonIgnore
 	private List<Visite> listeVisites;
 	
 	//Constructeurs
