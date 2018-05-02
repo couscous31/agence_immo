@@ -8,11 +8,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 
@@ -30,11 +33,15 @@ public class Contrat {
 	private Date dateSignature;
 
 	// Transfo assos avec client
-	@OneToOne(cascade=CascadeType.ALL)
+	@JsonIgnore
+	@OneToOne
+	@JoinColumn(name="cl_id",referencedColumnName="id_cl")
 	private Client client;
 
 	// Transfo assos avec bien immobilier
-	@OneToOne(cascade=CascadeType.ALL)
+	@JsonIgnore
+	@OneToOne
+	@JoinColumn(name="bi_id",referencedColumnName="id_bi")
 	private BienImmobilier bi;
 
 	// Getter et setter

@@ -39,28 +39,21 @@ monApp.controller("listeContratCtrl", function($scope, contratService, $rootScop
 
 	$scope.contrat = {
 		ref : '',
-		dateSignature : '',
-		client : {
-			id : ''
-			},
-			telephone : '',
-			ci : {
-				id : ''
-			},
-		bi : {
-			id : ''
-		}
-	},
+		dateSignature : ''
+	};
 	
 	$scope.indice = false;
+	
+	console.log("je suis dans le controller 1");
 
 	// fonction appelée par le bouton
 	$scope.ajouterContrat = function() {
 
-		// appel de la fonction ajoutOne du service
+		// appel de la fonction ajoutOneContrat du service
 		contratService.ajoutOneContrat($scope.contrat, function(callBack) {
 
 			if (callBack == 'OK') {
+				console.log("je suis dans le controller 2");
 				$location.path("findAllContrat");
 			} else {
 				$scope.message = "Fail !!!";
