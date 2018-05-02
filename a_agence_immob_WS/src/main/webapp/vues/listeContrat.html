@@ -22,9 +22,9 @@
 			<td>{{contrat.dateSignature}}</td>
 			<td>{{contrat.client.id}}</td>
 			<td>{{contrat.bi.id}}</td>
-			<td><a href="#" ><span
+			<td><a href="#" ng-click="supprimerLink(contrat.id)"><span
 					class="glyphicon glyphicon-trash" aria-hidden="true"></span></a> | 
-					<a><span
+					<a ng-click="modifierLink(contrat)"><span
 					class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span></a></td>
 		</tr>
 

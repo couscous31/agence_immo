@@ -5,7 +5,7 @@ monApp.factory("contratService", function($http){
 	var restUrl = "http://localhost:8080/a_agence_immob_WS";
 	
 	//méthode afficher la liste
-	function findAllContrat(busSC) {
+	function findAllContrats(busSC) {
 		
 		console.log("Je suis dans le provider");
 		
@@ -36,7 +36,7 @@ monApp.factory("contratService", function($http){
 			console.log(response.data);
 			busSC(response.data);
 		}, function errorCallback(response) {
-			
+			console.log("Erreur : ------" + response.statusText);
 		})
 	}
 	
@@ -64,7 +64,7 @@ monApp.factory("contratService", function($http){
 	// méthode supprimer
 	function delOneContrat(id, busSC) {
 
-		$http$http({
+		$http({
 			method : "DELETE",
 			url : restUrl + "/contrat/" + id
 
@@ -79,7 +79,7 @@ monApp.factory("contratService", function($http){
 	}
 	
 	return {
-		getAllContrat : findAllContrat,
+		getAllContrat : findAllContrats,
 		ajoutOneContrat : addOneContrat,
 		modifContrat : updateContrat,
 		supOneContrat : delOneContrat
