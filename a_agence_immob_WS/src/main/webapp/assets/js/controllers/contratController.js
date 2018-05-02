@@ -5,6 +5,7 @@ monApp.controller("listeContratCtrl", function($scope, contratService, $rootScop
 	//1ere méthode du controller : afficher la liste des contrats
 	contratService.getAllContrat(function(callBack){
 		$scope.listeContrats = callBack;
+		console.log("Je suis dans le controller !");
 	});
 	
 	// 2eme méthode du controller : supprimer un contrat

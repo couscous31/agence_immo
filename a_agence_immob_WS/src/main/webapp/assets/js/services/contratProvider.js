@@ -2,10 +2,12 @@
 
 monApp.factory("contratService", function($http){
 	
-	var restUrl = "http://localhost:8080/a_agence_immob_WS"
+	var restUrl = "http://localhost:8080/a_agence_immob_WS";
 	
 	//méthode afficher la liste
 	function findAllContrat(busSC) {
+		
+		console.log("Je suis dans le provider");
 		
 		$http({
 			method : "GET",

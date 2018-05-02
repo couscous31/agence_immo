@@ -19,7 +19,7 @@ public class ContratRest {
 	private IContratService contratService;
 
 	@RequestMapping(value = "/listeContrat", method = RequestMethod.GET, produces = "application/json")
-	public List<Contrat> findAll() {
+	public List<Contrat> findAllContrat() {
 		return contratService.getAllContrat();
 	}
 
