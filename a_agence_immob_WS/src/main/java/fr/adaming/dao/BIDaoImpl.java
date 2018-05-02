@@ -2,6 +2,7 @@ package fr.adaming.dao;
 
 import java.util.List;
 
+import org.apache.commons.codec.binary.Base64;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -45,10 +46,22 @@ public class BIDaoImpl implements IBIDao {
 		}
 		@Override
 		public List<BienImmobilier> getAllBienImmobilier() {
-			s=sf.getCurrentSession();
-			String req="FROM BienImmobilier";
-			q=s.createQuery(req);
-			return q.list();
+			// Requete HQL
+			String req = "FROM BienImmobilier as b";
+
+			// Ouvrir la session
+			Session s = sf.getCurrentSession();
+
+			Query query = s.createQuery(req);
+
+			// Cela te permet de transformer ton tableau byte en image url
+			// "data:image/png;base64,"=format
+			List<BienImmobilier> listebi = query.list();
+			for (BienImmobilier b : listebi) {
+				b.setImageBI("data:image/png;base64," + Base64.encodeBase64String(b.getPhotoBI()));
+			}
+
+			return listebi;
 		}
 		@Override
 		public BienImmobilier getBienImmobilierById(int id) {
