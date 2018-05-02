@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import fr.adaming.model.BienImmobilier;
-import fr.adaming.model.Etudiant;
 
 @Repository
 public class BIDaoImpl implements IBIDao {

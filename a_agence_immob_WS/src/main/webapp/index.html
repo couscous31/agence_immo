@@ -22,13 +22,15 @@
 <script type="text/javascript" src=assets/js/modules/app.js></script>
 <script type="text/javascript" src=assets/js/routages/routageProp.js></script>
 <script type="text/javascript" src=assets/js/controllers/Proprietaire.js></script>
-<script type="text/javascript" src=assets/js/services/ProprietaireProvider.js></script>
+<script type="text/javascript"
+	src=assets/js/services/ProprietaireProvider.js></script>
 </head>
 <body ng-app="monApp">
 
 	<nav class="navbar navbar-inverse">
 		<ul class="nav nav-pills">
 			<li role="presentation"><a href="#!findAllProp">Accueil</a></li>
+			<li role="presentation"><a href="#!findAllBi">BienImmo</a></li>
 			<li role="presentation"><a href="#!addProp">Ajouter</a></li>
 			<li role="presentation"><a href="#!updateProp">Modifier</a></li>
 			<li role="presentation"><a href="#!deleteProp">Supprimer</a></li>
@@ -36,12 +38,12 @@
 		</ul>
 	</nav>
 
-<div class="container">
-<div ng-view></div>
+	<div class="container">
+		<div ng-view></div>
 
 
 
-</div>
+	</div>
 
 </body>
 </html>
