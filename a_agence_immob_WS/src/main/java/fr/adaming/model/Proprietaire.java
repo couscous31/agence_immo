@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.swing.text.html.HTML;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -28,7 +29,8 @@ public class Proprietaire implements Serializable {
 	private Adresse adresse;
 	private String telPerso;
 	private String telPro;
-	private String lienGoogleMaps;
+	
+
 
 	//transformation uml en java
 	@OneToMany(mappedBy="proprietaire")
@@ -43,7 +45,7 @@ public class Proprietaire implements Serializable {
 	
 	
 
-	public Proprietaire(int id, String nom, Adresse adresse, String telPerso, String telPro, String lienGoogleMaps,
+	public Proprietaire(int id, String nom, Adresse adresse, String telPerso, String telPro,
 			List<BienImmobilier> listeBienImmobiliers) {
 		super();
 		this.id = id;
@@ -51,21 +53,19 @@ public class Proprietaire implements Serializable {
 		this.adresse = adresse;
 		this.telPerso = telPerso;
 		this.telPro = telPro;
-		this.lienGoogleMaps = lienGoogleMaps;
 		this.listeBienImmobiliers = listeBienImmobiliers;
 	}
 
 
 
 
-	public Proprietaire(String nom, Adresse adresse, String telPerso, String telPro, String lienGoogleMaps,
+	public Proprietaire(String nom, Adresse adresse, String telPerso, String telPro,
 			List<BienImmobilier> listeBienImmobiliers) {
 		super();
 		this.nom = nom;
 		this.adresse = adresse;
 		this.telPerso = telPerso;
 		this.telPro = telPro;
-		this.lienGoogleMaps = lienGoogleMaps;
 		this.listeBienImmobiliers = listeBienImmobiliers;
 	}
 
@@ -124,13 +124,7 @@ public class Proprietaire implements Serializable {
 
 
 	
-	public String getLienGoogleMaps() {
-		return lienGoogleMaps;
-	}
 
-	public void setLienGoogleMaps(String lienGoogleMaps) {
-		this.lienGoogleMaps = lienGoogleMaps;
-	}
 
 	// ToString
 	@Override
