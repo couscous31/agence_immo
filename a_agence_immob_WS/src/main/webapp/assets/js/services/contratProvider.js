@@ -2,11 +2,14 @@
 
 monApp.factory("contratService", function($http){
 	
+	var restUrl = "http://localhost:8080/a_agence_immob_WS"
+	
 	//méthode afficher la liste
 	function findAllContrat(busSC) {
 		
 		$http({
-			method : "GET"
+			method : "GET",
+			url : restUrl + "/listeContrat"
 				
 		}).then (function successCallback(response) {
 			console.log(response.data);
@@ -21,6 +24,7 @@ monApp.factory("contratService", function($http){
 		
 		$http({
 			method : "POST",
+			url : restUrl + "/contrat",
 			//on veut un JSON en sortie de la requête
 			data : angular.toJson(etudiant),
 			//la requête consomme un JSON
@@ -39,6 +43,7 @@ monApp.factory("contratService", function($http){
 
 		$http({
 			method : "PUT",
+			url : restUrl + "/contrat",
 			//on veut un JSON en sortie de la requête
 			data : angular.toJson(etudiant),
 			//la requête consomme un JSON
@@ -58,7 +63,8 @@ monApp.factory("contratService", function($http){
 	function delOneContrat(id, busSC) {
 
 		$http$http({
-			method : "DELETE"
+			method : "DELETE",
+			url : restUrl + "/contrat/" + id
 
 		}).then(function successCallback(response) {
 			busSC(response.statusText);

@@ -21,7 +21,7 @@ monApp.controller("listeContratCtrl", function($scope, contratService, $rootScop
 		})
 	};
 
-	// 3eme méthode du controller : modifier un étudiant
+	// 3eme méthode du controller : modifier un contrat
 	$rootScope.contratModif = {
 		id : undefined
 	};
@@ -38,8 +38,19 @@ monApp.controller("listeContratCtrl", function($scope, contratService, $rootScop
 
 	$scope.contrat = {
 		ref : '',
-		dateSignature : ''
-	};
+		dateSignature : '',
+		client : {
+			id : ''
+			},
+			telephone : '',
+			ci : {
+				id : ''
+			},
+		bi : {
+			id : ''
+		}
+	},
+	
 	$scope.indice = false;
 
 	// fonction appelée par le bouton
