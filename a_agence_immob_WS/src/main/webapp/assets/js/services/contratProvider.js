@@ -28,7 +28,7 @@ monApp.factory("contratService", function($http){
 			method : "POST",
 			url : restUrl + "/contrat",
 			//on veut un JSON en sortie de la requête
-			data : angular.toJson(etudiant),
+			data : angular.toJson(contrat),
 			//la requête consomme un JSON
 			headers : {ContentType : "application/JSON"}
 				
@@ -36,7 +36,7 @@ monApp.factory("contratService", function($http){
 			console.log(response.data);
 			busSC(response.data);
 		}, function errorCallback(response) {
-			console.log("Erreur : ------" + response.statusText);
+			
 		})
 	}
 	
@@ -47,7 +47,7 @@ monApp.factory("contratService", function($http){
 			method : "PUT",
 			url : restUrl + "/contrat",
 			//on veut un JSON en sortie de la requête
-			data : angular.toJson(etudiant),
+			data : angular.toJson(contrat),
 			//la requête consomme un JSON
 			headers : {ContentType : "application/JSON"}
 

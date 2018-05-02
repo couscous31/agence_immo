@@ -28,6 +28,7 @@ public class Proprietaire implements Serializable {
 	private Adresse adresse;
 	private String telPerso;
 	private String telPro;
+	private String lienGoogleMaps;
 
 	//transformation uml en java
 	@OneToMany(mappedBy="proprietaire")
@@ -39,24 +40,37 @@ public class Proprietaire implements Serializable {
 		super();
 	}
 
-	public Proprietaire(String nom, Adresse adresse, String telPerso, String telPro) {
-		super();
-		this.nom = nom;
-		this.adresse = adresse;
-		this.telPerso = telPerso;
-		this.telPro = telPro;
-	}
+	
+	
 
-	public Proprietaire(int id, String nom, Adresse adresse, String telPerso, String telPro) {
+	public Proprietaire(int id, String nom, Adresse adresse, String telPerso, String telPro, String lienGoogleMaps,
+			List<BienImmobilier> listeBienImmobiliers) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.adresse = adresse;
 		this.telPerso = telPerso;
 		this.telPro = telPro;
+		this.lienGoogleMaps = lienGoogleMaps;
+		this.listeBienImmobiliers = listeBienImmobiliers;
 	}
-	
-	
+
+
+
+
+	public Proprietaire(String nom, Adresse adresse, String telPerso, String telPro, String lienGoogleMaps,
+			List<BienImmobilier> listeBienImmobiliers) {
+		super();
+		this.nom = nom;
+		this.adresse = adresse;
+		this.telPerso = telPerso;
+		this.telPro = telPro;
+		this.lienGoogleMaps = lienGoogleMaps;
+		this.listeBienImmobiliers = listeBienImmobiliers;
+	}
+
+
+
 
 	// getters et setters
 	public int getId() {
@@ -110,6 +124,14 @@ public class Proprietaire implements Serializable {
 
 
 	
+	public String getLienGoogleMaps() {
+		return lienGoogleMaps;
+	}
+
+	public void setLienGoogleMaps(String lienGoogleMaps) {
+		this.lienGoogleMaps = lienGoogleMaps;
+	}
+
 	// ToString
 	@Override
 	public String toString() {

@@ -2,6 +2,7 @@ package fr.adaming.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +13,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
+
+
 
 @Entity
 @Table(name = "contrats")
@@ -27,11 +30,11 @@ public class Contrat {
 	private Date dateSignature;
 
 	// Transfo assos avec client
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	private Client client;
 
 	// Transfo assos avec bien immobilier
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	private BienImmobilier bi;
 
 	// Getter et setter
