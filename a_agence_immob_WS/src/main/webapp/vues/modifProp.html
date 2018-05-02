@@ -1,0 +1,15 @@
+
+<h1 style="text-align: center;color:purple">Modifier un proprietaire</h1>
+<br/>
+
+<form>
+id: <input type="text" ng-model="proprietaire.id"></input>
+nom: <input type="text" ng-model="proprietaire.nom"></input>
+codePostal: <input type="text" ng-model="proprietaire.adresse.codePostal"></input>
+numero: <input type="text" ng-model="proprietaire.adresse.numero"></input>
+rue: <input type="text" ng-model="proprietaire.adresse.rue"></input>
+ville: <input type="text" ng-model="proprietaire.adresse.ville"></input>
+telPerso: <input type="text" ng-model="proprietaire.telPerso"></input>
+telPro: <input type="text" ng-model="proprietaire.telPro"></input>
+<button ng-click="modifier()">Modifier</button>
+</form>

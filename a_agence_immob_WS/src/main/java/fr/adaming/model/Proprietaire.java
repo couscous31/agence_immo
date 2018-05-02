@@ -12,6 +12,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "proprietaires")
 @XmlRootElement
@@ -29,6 +31,7 @@ public class Proprietaire implements Serializable {
 
 	//transformation uml en java
 	@OneToMany(mappedBy="proprietaire")
+	@JsonIgnore
 	private List<BienImmobilier> listeBienImmobiliers;
 	
 	// contructeurs
@@ -52,6 +55,8 @@ public class Proprietaire implements Serializable {
 		this.telPerso = telPerso;
 		this.telPro = telPro;
 	}
+	
+	
 
 	// getters et setters
 	public int getId() {
@@ -103,6 +108,8 @@ public class Proprietaire implements Serializable {
 		this.listeBienImmobiliers = listeBienImmobiliers;
 	}
 
+
+	
 	// ToString
 	@Override
 	public String toString() {

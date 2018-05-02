@@ -1,0 +1,26 @@
+
+<h1 style="text-align: center; color: purple">Liste des proprietaires</h1>
+
+<table class="table">
+	<tr>
+		<th>ID</th>
+		<th>NOM</th>
+		<th>CODE POSTAL</th>
+		<th>VILLE</th>
+		<th>NUMERO</th>
+		<th>RUE</th>
+		<th>TEL PRO</th>
+		<th>TEL PERSO</th>
+	</tr>
+
+	<tr ng-repeat="prop in listeProprietaires">
+		<td>{{prop.id}}</td>
+		<td>{{prop.nom}}</td>
+		<td>{{prop.adresse.codePostal}}</td>
+		<td>{{prop.adresse.ville}}</td>
+		<td>{{prop.adresse.numero}}</td>
+		<td>{{prop.adresse.rue}}</td>
+		<td>{{prop.telPro}}</td>
+		<td>{{prop.telPerso}}</td>
+
+	</tr>
