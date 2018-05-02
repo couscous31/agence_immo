@@ -50,6 +50,8 @@ public class BienImmobilier {
 	private byte[] photoBI;
 	@Transient
 	private String imageBI;
+	private double lat;
+	private double lng;
 
 	
 	//transformations UML en java
@@ -207,6 +209,24 @@ public class BienImmobilier {
 
 	public void setProprietaire(Proprietaire proprietaire) {
 		this.proprietaire = proprietaire;
+	}
+
+	
+	
+	public double getLat() {
+		return lat;
+	}
+
+	public void setLat(double lat) {
+		this.lat = lat;
+	}
+
+	public double getLng() {
+		return lng;
+	}
+
+	public void setLng(double lng) {
+		this.lng = lng;
 	}
 
 	// to string
