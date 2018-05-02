@@ -1,0 +1,33 @@
+<h1 style="color: lightgreen; text-align: center">Liste des
+	clients</h1>
+
+<br />
+
+<div align="center" class="table-responsive">
+
+	<table class="table table-hover" style="text-align: center;">
+
+		<tr>
+			<th style="text-align: center;">#</th>
+			<th style="text-align: center;">Nom</th>
+			<th style="text-align: center;">Adresse</th>
+			<th style="text-align: center;">Téléphone</th>
+			<th style="text-align: center;">Email</th>
+			<th style="text-align: center;">Supprimer | Modifier</th>
+		</tr>
+
+		<tr ng-repeat="cl in listeClients">
+			<td>{{cl.id}}</td>
+			<td>{{cl.nom}}</td>
+			<td>{{cl.adresse.numero}} {{cl.adresse.rue}}, {{cl.adresse.codePostal}} {{cl.adresse.ville}}</td>
+			<td>{{cl.telephone}}</td>
+			<td>{{cl.email}}</td>
+			<td><a href="#" ng-click="supprimerLink(cl.id)"><span
+					class="glyphicon glyphicon-trash" aria-hidden="true"></span></a> | 
+					<a ng-click="modifierLink(cl)"><span
+					class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span></a></td>
+		</tr>
+
+	</table>
+
+</div>

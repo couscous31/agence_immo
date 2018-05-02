@@ -16,6 +16,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "clients")
 @XmlRootElement
@@ -29,18 +31,16 @@ public class Client implements Serializable {
 	@Embedded
 	private Adresse adresse;
 	private String telephone;
+	private String email;
 
 	// Transfo assos avec conseiller immobilier
 	@ManyToOne
 	@JoinColumn(name = "c_id", referencedColumnName = "id_c")
 	private ConseillerImmobilier ci;
 
-//	// Transfo assos avec classe standard
-//	@ManyToMany(mappedBy = "listeClient")
-//	private List<ClasseStandard> listeClasseStandard;
-
 	// Transfo assos avec contrat
 	@OneToOne(mappedBy = "client")
+	@JsonIgnore
 	private Contrat contrat;
 
 	// Constructeurs
@@ -48,19 +48,27 @@ public class Client implements Serializable {
 		super();
 	}
 
-	public Client(String nom, Adresse adresse, String telephone) {
+	public Client(String nom, Adresse adresse, String telephone, String email, ConseillerImmobilier ci,
+			Contrat contrat) {
 		super();
 		this.nom = nom;
 		this.adresse = adresse;
 		this.telephone = telephone;
+		this.email = email;
+		this.ci = ci;
+		this.contrat = contrat;
 	}
 
-	public Client(int id, String nom, Adresse adresse, String telephone) {
+	public Client(int id, String nom, Adresse adresse, String telephone, String email, ConseillerImmobilier ci,
+			Contrat contrat) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.adresse = adresse;
 		this.telephone = telephone;
+		this.email = email;
+		this.ci = ci;
+		this.contrat = contrat;
 	}
 
 	// Getter et setter
@@ -104,14 +112,6 @@ public class Client implements Serializable {
 		this.ci = ci;
 	}
 
-//	public List<ClasseStandard> getListeClasseStandard() {
-//		return listeClasseStandard;
-//	}
-//
-//	public void setListeClasseStandard(List<ClasseStandard> listeClasseStandard) {
-//		this.listeClasseStandard = listeClasseStandard;
-//	}
-
 	public Contrat getContrat() {
 		return contrat;
 	}
@@ -120,9 +120,18 @@ public class Client implements Serializable {
 		this.contrat = contrat;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	@Override
 	public String toString() {
-		return "Client [id=" + id + ", nom=" + nom + ", adresse=" + adresse + ", telephone=" + telephone + "]";
+		return "Client [id=" + id + ", nom=" + nom + ", adresse=" + adresse + ", telephone=" + telephone + ", email="
+				+ email + "]";
 	}
 
 }
