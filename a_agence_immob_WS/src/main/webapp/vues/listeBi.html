@@ -3,12 +3,12 @@
 
 <br/>
 
-Type de bien :
+Type de bien : 
 <input type="input" ng-model="recherche.classeStandard.type"/>
 
 <br/>
 
-Surface : 
+Surface :  
 <select ng-model="recherche.classeStandard.sufacemin">
 	<option value="">Surface minimale</option>
 	<option ng-repeat="s in listeSurface | orderBy">{{s}}</option>
@@ -16,7 +16,7 @@ Surface :
 
 <br/>
 
-Prix :
+Prix : 
 <select ng-model="recherche.classeStandard.prixmax">
 	<option value="">Prix maximal</option>
 	<option ng-repeat="p in listePrix | orderBy">{{p}}</option>
