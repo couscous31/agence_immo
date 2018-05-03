@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<!-- ajouter la lib de jquery -->
+<script type="text/javascript" src="assets/resources/js/jquery-3.3.1.js"></script>
+
+<!-- ajouter les libs de bootstrap -->
+<script type="text/javascript" src="assets/resources/js/bootstrap.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="assets/resources/CSS/bootstrap.css" />
+
+<!-- ajouter les libs de angular js -->
+<script type="text/javascript" src="assets/resources/js/angular.js"></script>
+<script type="text/javascript" src="assets/resources/js/angular-route.js"></script>
+<script type="text/javascript"
+	src="assets/resources/js/angular-locale_fr-fr.js"></script>
+
+<!-- ajouter mes scripts angular js -->
+<script type="text/javascript" src="assets/js/modules/app.js"></script>
+<script type="text/javascript" src="assets/js/routages/routageProp.js"></script>
+<script type="text/javascript" src="assets/js/routages/routageBI.js"></script>
+<script type="text/javascript" src="assets/js/controllers/Proprietaire.js"></script>
+<script type="text/javascript" src="assets/js/services/biProvider.js"></script>
+<script type="text/javascript"
+	src="assets/js/services/biProvider.js"></script>
+<script type="text/javascript" src="assets/js/controllers/BIController.js"></script>
+
+	
+	
+	
+</head>
+<body ng-app="monApp">
+
+	<nav class="navbar navbar-inverse">
+		<ul class="nav nav-pills">
+			<li role="presentation"><a href="#!findAllBi">Accueil</a></li>
+			<li role="presentation"><a href="#!addBi">Ajouter</a></li>
+			<li role="presentation"><a href="#!updateBi">Modifier</a></li>
+			<li role="presentation"><a href="#!deleteBi">Supprimer</a></li>
+		</ul>
+	</nav>
+
+	<div class="container">
+		<div ng-view></div>
+
+
+
+	</div>
+
+</body>
+</html>

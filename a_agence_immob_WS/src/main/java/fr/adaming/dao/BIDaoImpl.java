@@ -37,12 +37,13 @@ public class BIDaoImpl implements IBIDao {
 			return b;
 		}
 		@Override
-		public void deleteBienImmobilier(int id) {
+		public int deleteBienImmobilier(int id) {
 			s=sf.getCurrentSession();
 			String req="DELETE FROM BienImmobilier b WHERE b.id=:pID";
 			q=s.createQuery(req);
 			q.setParameter("pID", id);
-			q.executeUpdate();
+			
+			return q.executeUpdate();
 		}
 		@Override
 		public List<BienImmobilier> getAllBienImmobilier() {

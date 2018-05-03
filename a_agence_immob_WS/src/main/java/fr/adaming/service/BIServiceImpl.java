@@ -30,8 +30,8 @@ public class BIServiceImpl implements IBIService {
 	}
 
 	@Override
-	public void deleteBienImmobilier(int id) {
-		biDao.deleteBienImmobilier(id);
+	public int deleteBienImmobilier(int id) {
+		return biDao.deleteBienImmobilier(id);
 	}
 
 	@Override

@@ -10,27 +10,27 @@
 		<tr>
 			<th style="text-align: center;">ID</th>
 			<th style="text-align: center;">Type</th>
+			<th style="text-align: center;">Statut</th>
 			<th style="text-align: center;">Offre</th>
 			<th style="text-align: center;">Date de disponibilité</th>
 			<th style="text-align: center;">Adresse</th>
-			<th style="text-align: center;">Code Postal</th>
-			<th style="text-align: center;">Ville</th>
-			<th style="text-align: center;">Prix</th>
+		<th style="text-align: center;">Prix</th>
+			
 		</tr>
 
-		<tr ng-repeat="bi in listeBi">
+		<tr ng-repeat="bi in listeBienImmobiliers">
 			<td>{{bi.id}}</td>
 			<td>{{bi.classeStandard.type}}</td>
-			<td>{{bi.classeStandard.modeoffre}</td>
+			<td>{{bi.statut}}</td>
+			<td>{{bi.classeStandard.modeoffre}}</td>
 			<td>{{bi.dateDispo}}</td>
-			<td>{{bi.adresse.numero}} {{bi.adresse.rue}}</td>
-			<td>{{bi.adresse.codePostal}}</td>
-			<td>{{bi.adresse.ville}}</td>
+			<td>{{bi.adresse.numero}} {{bi.adresse.rue}} {{bi.adresse.codePostal}} {{bi.adresse.ville}}</td>
 			<td>{{bi.prix}}</td>
+			
 		</tr>
 
 	</table>
 
 
-<img ng-src="https://maps.googleapis.com/maps/api/staticmap?center=48.7963302,2.3517845&zoom=12&size=600x400"/>
+
 </div>

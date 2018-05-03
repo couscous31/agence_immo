@@ -20,32 +20,32 @@ public class BIRest {
 	
 	// Injection de dépendance
 	@Autowired
-	private IBIService eService;
+	private IBIService biService;
 
 	// Méthodes du web service
 	
-	@RequestMapping(value="/liste",method=RequestMethod.GET,produces="application/json")	// si plusieurs : {"application/json","application/xml"}
+	@RequestMapping(value="/listeBi",method=RequestMethod.GET,produces="application/json")	// si plusieurs : {"application/json","application/xml"}
 	public List<BienImmobilier> findAllBienImmobilier(){
-		return eService.getAllBienImmobilier();
+		return biService.getAllBienImmobilier();
 	}
 	
 	@RequestMapping(value="/BienImmobilier",method=RequestMethod.GET,produces="application/json")
-	public BienImmobilier findEtudiant(@RequestParam("pID") int id){
-		return eService.getBienImmobilierById(id);
+	public BienImmobilier findEtudiant(@RequestParam("pId") int id){
+		return biService.getBienImmobilierById(id);
 	}
 	
 	@RequestMapping(value="/BienImmobilier",method=RequestMethod.POST,consumes="application/json",produces="application/json")
-	public BienImmobilier ajouterBienImmobilier(@RequestBody BienImmobilier b){
-		return eService.addBienImmobilier(b);
+	public BienImmobilier ajouterBienImmobilier(@RequestBody BienImmobilier bi){
+		return biService.addBienImmobilier(bi);
 	}
 	
 	@RequestMapping(value="/BienImmobilier",method=RequestMethod.PUT,consumes="application/json",produces="application/json")
-	public BienImmobilier modifierEtudiant(@RequestBody BienImmobilier b){
-		return eService.updateBienImmobilier(b);
+	public BienImmobilier modifierEtudiant(@RequestBody BienImmobilier bi){
+		return biService.updateBienImmobilier(bi);
 	}
 	
 	@RequestMapping(value="/BienImmobilier/{pID}",method=RequestMethod.DELETE)
-	public void supprimerBienImmobilier(@PathVariable("pID") int id){
-		eService.deleteBienImmobilier(id);
+	public int supprimerBienImmobilier(@PathVariable("pId") int id){
+		return biService.deleteBienImmobilier(id);
 	}
 }

@@ -61,6 +61,7 @@ public class BienImmobilier {
 	private ClasseStandard classeStandard;
 	
 	//CONTRAT
+	@JsonIgnore
 	@OneToOne(mappedBy="bi")
 	private Contrat contrat;
 	

@@ -10,7 +10,7 @@ public interface IBIDao {
 
 	public BienImmobilier updateBienImmobilier(BienImmobilier b);
 
-	public void deleteBienImmobilier(int id);
+	public int deleteBienImmobilier(int id);
 
 	public List<BienImmobilier> getAllBienImmobilier();
 
