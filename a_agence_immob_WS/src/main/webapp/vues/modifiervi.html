@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
 
-</body>
-</html>
+<h1 style="text-align: center;color:purple">Modifier la visite</h1>
+<br/>
+
+<form>
+id: <input type="number" ng-model="Visite.id"></input>
+Date visite: <input type="date" placeholder="aaaa-mm-jj" ng-model="Visite.datevisite"></input>
+Heure de la visite: <input type="time"  ng-model="Visite.heure"></input>
+<button ng-click="modifiervi()">Modifier une visite</button>
+</form>

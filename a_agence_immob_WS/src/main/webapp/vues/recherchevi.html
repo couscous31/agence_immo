@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<form>
+Id recherche de la visite : <input type="number" ng-model="id"></input>
+<button ng-click="rechercheViId()">Rechercher</button>
+</form>
 
-</body>
-</html>
+<table class="table" ng-show="indice">
+	<tr>
+		<th>ID</th>
+		<th>DATE DE VISITE</th>
+		<th>HEURE</th>
+		<th>BIEN</th>
+	</tr>
+
+	<tr>
+		<td>{{viOut.id}}</td>
+		<td>{{viOut.datevisite}}</td>
+		<td>{{viOut.heure}}</td>
+		<td>{{viOut.bienimmo.id}}</td>
+
+	</tr>
+	
+	</table>

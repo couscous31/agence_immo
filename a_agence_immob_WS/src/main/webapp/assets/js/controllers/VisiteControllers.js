@@ -9,7 +9,7 @@ monApp
 })
 
 .controller("getbyidviCtrl", function($scope, viService) {
-	$scope.id;
+	$scope.id = undefined;
 	$scope.indice = false;
 	$scope.indice1 = false;
 
@@ -37,10 +37,10 @@ monApp
 		datevisite : '',
 		heure : '',
 		id_bi:''
-	};
+	}
 	
 	$scope.ajoutervisite = function() {
-		viService.ajoutervi($scope.Visite, function(callBack) {
+		viService.ajoutvi($scope.Visite, function(callBack) {
 			if (typeof callBack == "object") {
 				$location.path("listevi");
 			} else {
@@ -55,7 +55,7 @@ monApp
 	$scope.id;
 	// fonction appelée via le boutton
 	$scope.supprimervi = function() {
-		viService.supprimervi($scope.id, function(callBack) {
+		viService.supp($scope.id, function(callBack) {
 			if (callBack == 'OK') {
 				$location.path("/listevi");
 			} else {
@@ -69,13 +69,13 @@ monApp
 .controller("modifviCtrl",
 		function($scope, viService, $location, $rootScope) {
 				$scope.Visite = {
-					id : null,
-					datevisite : null,
-					heure : null,
+					id : '',
+					datevisite : '',
+					heure : '',
 				}
 				// fonction appelée via le bouton modifier
 			$scope.modifiervi = function() {
-				viService.modifiervi($scope.visite, function(callBack) {
+				viService.modifvi($scope.Visite, function(callBack) {
 					if (typeof callBack == "object") {
 						$location.path("listevi");
 					} else {
