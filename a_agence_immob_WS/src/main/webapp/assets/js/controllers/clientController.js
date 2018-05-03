@@ -54,7 +54,7 @@ monApp.controller("listeClientCtrl", function($scope, clService, $rootScope, $lo
 	$scope.ajouterClient = function() {
 
 		// appel de la fonction ajoutOneClient du service
-		contratService.ajoutOneClient($scope.client, function(callBack) {
+		clService.ajoutOneClient($scope.client, function(callBack) {
 
 			if (callBack == 'OK') {
 				$location.path("findAllClient");

@@ -26,7 +26,7 @@ monApp.factory("clService", function($http){
 			method : "POST",
 			url : restUrl + "/client",
 			//on veut un JSON en sortie de la requête
-			data : angular.toJson(contrat),
+			data : angular.toJson(client),
 			//la requête consomme un JSON
 			headers : {ContentType : "application/JSON"}
 				
