@@ -121,7 +121,7 @@ monApp.factory("biService", function($http) {
 	function getByIdProp(id_prop, bus) {
 		$http({
 			method : "GET",
-			url : restURL + "/BienImmobilierprop?pIdprop=" + id
+			url : restURL + "/BienImmobilierprop?pIdprop=" + id_prop
 		}).then(function succesCallBack(response) {
 			bus(response.data)
 		}, function errorCallBack(response) {
