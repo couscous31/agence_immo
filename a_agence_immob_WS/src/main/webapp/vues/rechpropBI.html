@@ -1,0 +1,34 @@
+<form>
+Id du proprietaire recherche : <input type="text" ng-model="id"></input>
+<button ng-click="rechercherParIDprop()">Rechercher</button>
+</form>
+
+<div align="center" class="table-responsive">
+
+	<table class="table table-hover" style="text-align: center;">
+
+		<tr>
+			<th style="text-align: center;">ID</th>
+			<th style="text-align: center;">Type</th>
+			<th style="text-align: center;">Offre</th>
+			<th style="text-align: center;">Date de disponibilité</th>
+			<th style="text-align: center;">Adresse</th>
+			<th style="text-align: center;">Code Postal</th>
+			<th style="text-align: center;">Ville</th>
+			<th style="text-align: center;">Prix</th>
+		</tr>
+
+		<tr>
+			<td>{{propOut.id}}</td>
+			<td>{{propOut.classeStandard.type}}</td>
+			<td>{{propOut.classeStandard.modeoffre}}</td>
+			<td>{{propOut.dateDispo}}</td>
+			<td>{{propOut.adresse.numero}} {{propOut.adresse.rue}}</td>
+			<td>{{propOut.adresse.codePostal}}</td>
+			<td>{{propOut.adresse.ville}}</td>
+			<td>{{propOut.prix}}</td>
+		</tr>
+
+	</table>
+
+</div>
