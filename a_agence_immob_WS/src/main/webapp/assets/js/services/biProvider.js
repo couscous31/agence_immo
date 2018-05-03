@@ -14,40 +14,7 @@ monApp.factory("biService", function($http) {
 		})
 
 	}
-	
-	// FONCTION BARRE DE RECHERCHE
-	function getAll(busSC){
-		$http({
-			method : "GET",
-			url : restURL + "/classeStandard"
-		}).then(function successCallBack(response){
-			busSC(response.data)
-		}, function errorCallBack(response) {
-			console.log("Erreur : ------" + response.statusText);
-		})
-	}
-	
-	function getAllSurface(busSC){
-		$http({
-			method : "GET",
-			url : restURL + "/classeStandardSurface"
-		}).then(function successCallBack(response){
-			busSC(response.data)
-		}, function errorCallBack(response) {
-			console.log("Erreur : ------" + response.statusText);
-		})
-	}
-	
-	function getAllPrix(busSC){
-		$http({
-			method : "GET",
-			url : restURL + "/classeStandardPrix"
-		}).then(function successCallBack(response){
-			busSC(response.data)
-		}, function errorCallBack(response) {
-			console.log("Erreur : ------" + response.statusText);
-		})
-	}
+
 	
 	// FONCTION AJOUTER
 	function addOne(bienImmobilier, bus) {

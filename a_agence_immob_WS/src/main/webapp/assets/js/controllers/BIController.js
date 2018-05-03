@@ -8,18 +8,7 @@ monApp
 
 })
 
-.controller("listeBiCtrl", function($scope, biService){
-	biService.getAllBi(function(callBack){
-		$scope.listeBi=callBack;
-	});
-	biService.getAllSMin(function(callBack){
-		$scope.listeSurface=callBack;
-	});
-	biService.getAllPMax(function(callBack){
-		$scope.listePrix=callBack;
-	});
 
-})
 
 .controller("ajoutBiCTRL", function($scope, biService, $location) {
 	$scope.bienImmobilier = {
@@ -149,6 +138,29 @@ monApp
 	}
 
 })
+
+
+
+.controller("BiSeulCTRL", function($scope, bienImmobilier, biService, $rootScope, $location) {
+
+	$scope.bienImmobilier;
+	// fonction appelée via le boutton
+	$scope.afficheBiSeul = function() {
+
+		biService.suppOne($scope.idDel, function(callBack) {
+			if (callBack == 'OK') {
+				$location.path("/findAllBi");
+			} else {
+				$scope.message = "suppression impossible ! "
+			}
+		})
+
+	}
+})
+
+		
+
+
 
 .controller("recBiPrCTRL", function($scope, biService) {
 	$scope.id_prop;
