@@ -44,7 +44,7 @@ public class BIRest {
 		return biService.updateBienImmobilier(bi);
 	}
 	
-	@RequestMapping(value="/BienImmobilier/{pID}",method=RequestMethod.DELETE)
+	@RequestMapping(value="/BienImmobilier/{pId}",method=RequestMethod.DELETE)
 	public int supprimerBienImmobilier(@PathVariable("pId") int id){
 		return biService.deleteBienImmobilier(id);
 	}
