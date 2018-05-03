@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -42,6 +43,10 @@ public class Client implements Serializable {
 	@OneToOne(mappedBy = "client")
 	@JsonIgnore
 	private Contrat contrat;
+
+	@OneToMany(mappedBy = "client")
+	@JsonIgnore
+	private List<Visite> visites;
 
 	// Constructeurs
 	public Client() {
@@ -126,6 +131,14 @@ public class Client implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public List<Visite> getVisites() {
+		return visites;
+	}
+
+	public void setVisites(List<Visite> visites) {
+		this.visites = visites;
 	}
 
 	@Override

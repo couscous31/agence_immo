@@ -2,16 +2,23 @@
 
 <table class="table">
 	<tr>
-		<th>ID</th>
+		<th>CONSEILLER</th>
+		<th>ID VISITE</th>
 		<th>DATE DE VISITE</th>
 		<th>HEURE</th>
 		<th>BIEN</th>
+		<th>CLIENT</th>
 	</tr>
 
 	<tr ng-repeat="vi in listevi">
+		<td>{{vi.conseillerimmobilier.id}}</td>
 		<td>{{vi.id}}</td>
 		<td>{{vi.datevisite}}</td>
 		<td>{{vi.heure}}</td>
-		<td>{{vi.bienimmo.id}}</td>
-
+		<td>{{vi.bienImmo.id}}</td>
+		<td>{{vi.client.id}}</td>
+		<td><a href="#" ng-click="supprimerBouton(vi.id)"><span
+					class="glyphicon glyphicon-trash" aria-hidden="true"></span></a> | 
+					<a ng-click="modifierBouton(vi)"><span
+					class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span></a></td>
 	</tr>

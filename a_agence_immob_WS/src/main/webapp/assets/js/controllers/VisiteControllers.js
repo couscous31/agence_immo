@@ -4,7 +4,31 @@ monApp
 	// fonction recuperer la liste des proprietaire
 	viService.getall(function(callBack) {
 		$scope.listevi = callBack;
-	})
+	});
+
+	// 2eme méthode du controller : supprimer un contrat
+	$scope.supprimerBouton = function(id) {
+
+		// appel de la fonction supOneContrat du service
+		viService.supp(id, function(callBack) {
+
+			if (callBack == 'OK') {
+				clService.getall(function(callBack) {
+					$scope.listevi = callBack;
+				});
+			}
+		})
+	};
+	// 3eme méthode du controller : modifier un contrat
+	$rootScope.viModif = {
+		id : undefined
+	};
+
+	$scope.modifierBouton = function(Visite) {
+		$rootScope.viModif = Visite;
+		$location.path("modifvi");
+
+	};
 
 })
 
@@ -35,8 +59,7 @@ monApp
 .controller("ajoutviCtrl", function($scope, viService, $location) {
 	$scope.Visite = {
 		datevisite : '',
-		heure : '',
-		id_bi:''
+		heure : ''
 	}
 	
 	$scope.ajoutervisite = function() {
