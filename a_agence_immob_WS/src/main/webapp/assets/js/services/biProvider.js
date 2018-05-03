@@ -50,11 +50,11 @@ monApp.factory("biService", function($http) {
 
 	// FONCTION DELETE
 	function delOne(id, bus) {
+		
 		$http({
 			method : "DELETE",
 			url : restURL + "/BienImmobilier/" + id
 		}).then(function succesCallBack(response) {
-			console.log("---------provider")
 			bus(response.statusText)
 		
 		}, function errorCallBack(response) {

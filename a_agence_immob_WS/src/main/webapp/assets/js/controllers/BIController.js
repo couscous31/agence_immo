@@ -85,13 +85,13 @@ monApp
 				})
 
 .controller("supprBiCTRL", function($scope, biService, $location) {
+	
 	$scope.idDel;
 	// fonction appelée via le boutton
 	$scope.supprimerBiParId = function() {
 		
 		biService.suppOne($scope.idDel, function(callBack) {
 			if (callBack == 'OK') {
-				console.log("---------------controller")
 				$location.path("/findAllBi");
 			} else {
 				$scope.message = "suppression impossible ! "
