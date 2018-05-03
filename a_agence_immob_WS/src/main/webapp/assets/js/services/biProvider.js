@@ -17,6 +17,11 @@ monApp.factory("biService", function($http) {
 	
 	// FONCTION AJOUTER
 	function addOne(bienImmobilier, bus) {
+		//transformer image récupérer en base 64
+		console.log(bienImmobilier.photoBI);
+		
+		bienImmobilier.photoBI=bienImmobilier.photoBI.base64;
+		
 		$http.post(restURL + "/BienImmobilier", JSON.stringify(bienImmobilier), {
 			ContentType : "application/JSON"
 		}).then(function successCallback(response) {
@@ -62,12 +67,68 @@ monApp.factory("biService", function($http) {
 		})
 	}
 	
+	function getAllBi(buscSC) {
+		$http({
+			method : "GET",
+			url : restUrl + "/classeStandard"
+		}).then(function successCallBack(response) {
+					busSC(response.data)
+				},
+				function errorCallBack(response) {
+					console.log("Erreur : ------"+ response.statusText);
+				})
+	}
+
+	function ajoutBi(bi, busSC) {
+		$http({
+			method : "POST",
+			url : restUrl + "/BienImmobilier",
+			data : JSON.stringify(bi),
+			headers : {
+				ContentType : "application/JSON"
+			}
+		}).then(
+				function successCallBack(response) {
+					busSC(response.data)
+				},
+				function errorCallBack(response) {
+					console.log("Erreur : ------"
+							+ response.statusText);
+				})
+	}
+
+	function geoAdresse(rue, codePostal, ville, busSC) {
+		$http(
+				{
+					method : "GET",
+					url : "https://maps.googleapis.com/maps/api/geocode/json?address="
+							+ rue
+							+ ","
+							+ codePostal
+							+ ""
+							+ ville
+							+ "&key=AIzaSyDy1ZKI7FhtHYJx8VEB0GQyjcUoxc2nwy4"
+				}).then(
+				function successCallBack(response) {
+					busSC(response.data)
+				},
+				function errorCallBack(response) {
+					console.log("Erreur : ------"
+							+ response.statusText);
+				})
+
+}
+	
+	
 	return {
 		getAll: findAll,
 		getOne: getById,
 		suppOne: delOne,
 		ajoutOne: addOne,
-		modifOne : updateOne
+		modifOne : updateOne,
+		findAllBi : getAllBi,
+		addBi : ajoutBi, 
+		localisationBi : geoAdresse 
 	}
 
 });

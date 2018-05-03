@@ -1,95 +1,91 @@
 monApp
 
-		.controller("listeBiCTRL",
-				function($scope, biService, $location, $rootScope) {
-					// fonction recuperer la liste des biens immobiliers
-					biService.getAll(function(callBack) {
-						$scope.listeBienImmobiliers = callBack;
-					})
+.controller("listeBiCTRL", function($scope, biService, $location, $rootScope) {
+	// fonction recuperer la liste des biens immobiliers
+	biService.getAll(function(callBack) {
+		$scope.listeBienImmobiliers = callBack;
+	})
 
-				})
+})
 
-		.controller("ajoutBiCTRL", function($scope, biService, $location) {
-			$scope.bienImmobilier = {
-				type : null,
-				codePostal : null,
-				numero : null,
-				rue : null,
-				ville : null,
-				dateDispo : null,
-				dateSoumission : null,
-				photoBI : null,
-				prix : null,
-				revenuCadastral : null,
-				statut : null,
-				etat : null,
-				prixAchat : null,
-				caution : null,
-				charges : null,
-				loyer : null,
-				meubles : null,
-				typeBail : null,
-				cs_id : null,
-				prop_id : null
+.controller("ajoutBiCTRL", function($scope, biService, $location) {
+	$scope.bienImmobilier = {
+		type : null,
+		codePostal : null,
+		numero : null,
+		rue : null,
+		ville : null,
+		dateDispo : null,
+		dateSoumission : null,
+		photoBI : null,
+		prix : null,
+		revenuCadastral : null,
+		statut : null,
+		etat : null,
+		prixAchat : null,
+		caution : null,
+		charges : null,
+		loyer : null,
+		meubles : null,
+		typeBail : null,
+		cs_id : null,
+		prop_id : null
+	}
+	// fonction appelée via le bouton ajouter
+	$scope.ajouterBi = function() {
+		biService.ajoutOne($scope.bienImmobilier, function(callBack) {
+			if (typeof callBack == "object") {
+				$location.path("findAllBi");
+			} else {
+				$scope.message = "ajout impossible"
 			}
-			// fonction appelée via le bouton ajouter
-			$scope.ajouterBi = function() {
-				biService.ajoutOne($scope.bienImmobilier,$scope.file, function(callBack) {
-					if (typeof callBack == "object") {
-						$location.path("findAllBi");
-					} else {
-						$scope.message = "ajout impossible"
-					}
-				})
-			}
-
 		})
+	}
 
-		.controller(
-				"modifBiCTRL",
-				function($scope, biService, $location, $rootScope) {
-					$scope.bienImmobilier = {
-						type : null,
-						codePostal : null,
-						numero : null,
-						rue : null,
-						ville : null,
-						dateDispo : null,
-						dateSoumission : null,
-						photoBI : null,
-						prix : null,
-						revenuCadastral : null,
-						statut : null,
-						etat : null,
-						prixAchat : null,
-						caution : null,
-						charges : null,
-						loyer : null,
-						meubles : null,
-						typeBail : null,
-						cs_id : null,
-						prop_id : null
-					}
-					// fonction appelée via le bouton modifier
-					$scope.modifierBi = function() {
-						biService.modifOne($scope.bienImmobilier, function(
-								callBack) {
-							if (typeof callBack == "object") {
-								$location.path("findAllBi");
-							} else {
-								$scope.message = "modif impossible"
-							}
-						})
-					}
+})
 
-				})
+.controller("modifBiCTRL", function($scope, biService, $location, $rootScope) {
+	$scope.bienImmobilier = {
+		type : null,
+		codePostal : null,
+		numero : null,
+		rue : null,
+		ville : null,
+		dateDispo : null,
+		dateSoumission : null,
+		photoBI : null,
+		prix : null,
+		revenuCadastral : null,
+		statut : null,
+		etat : null,
+		prixAchat : null,
+		caution : null,
+		charges : null,
+		loyer : null,
+		meubles : null,
+		typeBail : null,
+		cs_id : null,
+		prop_id : null
+	}
+	// fonction appelée via le bouton modifier
+	$scope.modifierBi = function() {
+		biService.modifOne($scope.bienImmobilier, function(callBack) {
+			if (typeof callBack == "object") {
+				$location.path("findAllBi");
+			} else {
+				$scope.message = "modif impossible"
+			}
+		})
+	}
+
+})
 
 .controller("supprBiCTRL", function($scope, biService, $location) {
-	
+
 	$scope.idDel;
 	// fonction appelée via le boutton
 	$scope.supprimerBiParId = function() {
-		
+
 		biService.suppOne($scope.idDel, function(callBack) {
 			if (callBack == 'OK') {
 				$location.path("/findAllBi");
@@ -99,8 +95,7 @@ monApp
 		})
 
 	}
-})				
-				
+})
 
 .controller("recBiCTRL", function($scope, biService) {
 	$scope.id;
@@ -121,30 +116,24 @@ monApp
 				$scope.message = "le proprietaire recherche n'existe pas ! "
 			}
 
-		});
+		})
 
 	}
+})
 
-				
-//		.controller(
-//				"ajoutBiCtrl",
-//				function($scope, biService) {
-//
-//					$scope.ajouter = function() {
-//
-//						biService
-//								.localisationBi(
-//										$scope.rue,
-//										$scope.codePostal,
-//										$scope.ville,
-//										function(callBack) {
-//											$scope.lat = callBack.results[0].geometry.location.lat;
-//											$scope.lng = callBack.results[0].geometry.location.lng;
-//
-//											console.log($scope.lat);
-//											console.log($scope.lng);
-//										})
-//
-//					}
-//
-				})
+.controller("ajoutBiCtrl",function($scope, biService) {
+	 $scope.ajouter = function() {
+	
+	 biService.localisationBi($scope.rue,$scope.codePostal,$scope.ville,function(callBack) {
+		 
+	 $scope.lat = callBack.results[0].geometry.location.lat;
+	 $scope.lng = callBack.results[0].geometry.location.lng;
+	
+	 console.log($scope.lat);
+	 console.log($scope.lng);
+		
+		})
+	}
+
+})
+
