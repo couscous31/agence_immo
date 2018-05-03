@@ -48,4 +48,10 @@ public class BIRest {
 	public int supprimerBienImmobilier(@PathVariable("pId") int id){
 		return biService.deleteBienImmobilier(id);
 	}
+	
+
+	@RequestMapping(value="/BienImmobilierprop",method=RequestMethod.GET,produces="application/json")
+	public BienImmobilier findBIByProp(@RequestParam("pIdprop") int id_prop){
+		return biService.getBienImmobilierByProp(id_prop);
+	}
 }

@@ -15,5 +15,7 @@ public interface IBIService {
 	public List<BienImmobilier> getAllBienImmobilier();
 
 	public BienImmobilier getBienImmobilierById(int id);
+	
+	public BienImmobilier getBienImmobilierByProp(int id_prop);
 
 }

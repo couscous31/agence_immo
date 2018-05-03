@@ -44,6 +44,12 @@ public class BIServiceImpl implements IBIService {
 		return biDao.getBienImmobilierById(id);
 	}
 
+	@Override
+	public BienImmobilier getBienImmobilierByProp(int id_prop) {
+		// TODO Auto-generated method stub
+		return biDao.getBienImmobilierByProp(id_prop);
+	}
+
 
 
 }

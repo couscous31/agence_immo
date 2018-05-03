@@ -73,4 +73,12 @@ public class BIDaoImpl implements IBIDao {
 			return (BienImmobilier) q.uniqueResult();
 		}
 
+		public BienImmobilier getBienImmobilierByProp(int id_prop){
+			s=sf.getCurrentSession();
+			String req="FROM BienImmobilier b WHERE b.proprietaire.id=:pIdprop";
+			q=s.createQuery(req);
+			q.setParameter("pIdprop", id_prop);
+			return (BienImmobilier) q.uniqueResult();
+			
+		}
 }
