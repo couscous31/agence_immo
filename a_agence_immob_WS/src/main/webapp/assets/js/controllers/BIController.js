@@ -34,7 +34,7 @@ monApp
 			}
 			// fonction appelée via le bouton ajouter
 			$scope.ajouterBi = function() {
-				biService.ajoutOne($scope.bienImmobilier, function(callBack) {
+				biService.ajoutOne($scope.bienImmobilier,$scope.file, function(callBack) {
 					if (typeof callBack == "object") {
 						$location.path("findAllBi");
 					} else {

@@ -45,7 +45,7 @@
 <div class="form-group">
 	<label for="exampleInputEmail1" class="col-sm-2 control-label">dateDispo</label>
 	<div class="col-sm-10">
-		<input type="text" class="form-control" id="dateDispo"
+		<input type="date" class="form-control" id="dateDispo"
 			placeholder="dateDispo" ng-model="bienImmobilier.dateDispo">
 	</div>
 </div>
@@ -53,32 +53,34 @@
 <div class="form-group">
 	<label for="exampleInputEmail1" class="col-sm-2 control-label">dateSoumission</label>
 	<div class="col-sm-10">
-		<input type="text" class="form-control" id="dateSoumission"
+		<input type="date" class="form-control" id="dateSoumission"
 			placeholder="dateSoumission" ng-model="bienImmobilier.dateSoumission">
 	</div>
 </div>
 
+
 <div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">photoBI</label>
-	<div class="col-sm-10">
-		<input type="text" class="form-control" id="photoBI"
-			placeholder="photoBI" ng-model="bienImmobilier.photoBI">
-	</div>
+	<label for="photoBI">Choisir la photo du bien</label> <input type="file"
+		ng-model="bienImmobilier.photoBI" name="photoBI" base-sixty-four-input
+		required onload="onLoad" accept="image/*">
 </div>
+
 
 <div class="form-group">
 	<label for="exampleInputEmail1" class="col-sm-2 control-label">prix</label>
 	<div class="col-sm-10">
-		<input type="text" class="form-control" id="prix"
-			placeholder="prix" ng-model="bienImmobilier.prix">
+		<input type="text" class="form-control" id="prix" placeholder="prix"
+			ng-model="bienImmobilier.prix">
 	</div>
 </div>
 
 <div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">revenu Cadastral</label>
+	<label for="exampleInputEmail1" class="col-sm-2 control-label">revenu
+		Cadastral</label>
 	<div class="col-sm-10">
 		<input type="text" class="form-control" id="revenuCadastral"
-			placeholder="revenuCadastral" ng-model="bienImmobilier.revenuCadastral">
+			placeholder="revenuCadastral"
+			ng-model="bienImmobilier.revenuCadastral">
 	</div>
 </div>
 
@@ -93,8 +95,8 @@
 <div class="form-group">
 	<label for="exampleInputEmail1" class="col-sm-2 control-label">etat</label>
 	<div class="col-sm-10">
-		<input type="text" class="form-control" id="etat"
-			placeholder="etat" ng-model="bienImmobilier.etat">
+		<input type="text" class="form-control" id="etat" placeholder="etat"
+			ng-model="bienImmobilier.etat">
 	</div>
 </div>
 
@@ -125,8 +127,8 @@
 <div class="form-group">
 	<label for="exampleInputEmail1" class="col-sm-2 control-label">loyer</label>
 	<div class="col-sm-10">
-		<input type="text" class="form-control" id="loyer"
-			placeholder="loyer" ng-model="bienImmobilier.loyer">
+		<input type="text" class="form-control" id="loyer" placeholder="loyer"
+			ng-model="bienImmobilier.loyer">
 	</div>
 </div>
 
@@ -147,15 +149,17 @@
 </div>
 
 <div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">Id classe Standard</label>
+	<label for="exampleInputEmail1" class="col-sm-2 control-label">Id
+		classe Standard</label>
 	<div class="col-sm-10">
-		<input type="text" class="form-control" id="cs_id"
-			placeholder="cs_id" ng-model="bienImmobilier.cs_id">
+		<input type="text" class="form-control" id="cs_id" placeholder="cs_id"
+			ng-model="bienImmobilier.cs_id">
 	</div>
 </div>
 
 <div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">Id du proprietaire du bien</label>
+	<label for="exampleInputEmail1" class="col-sm-2 control-label">Id
+		du proprietaire du bien</label>
 	<div class="col-sm-10">
 		<input type="text" class="form-control" id="prop_id"
 			placeholder="prop_id" ng-model="bienImmobilier.prop_id">
