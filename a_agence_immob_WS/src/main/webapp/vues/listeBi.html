@@ -1,5 +1,30 @@
-<h1 style="color: lightgreen; text-align: center">Liste des Bien
-	immobiliers</h1>
+<input type="checkbox" ng-model="recherche.classeStandard.modeoffre"  ng-true-value="'Achat'" ng-false-value="''" />Achat
+<input type="checkbox" ng-model="recherche2.classeStandard.modeoffre"  ng-true-value="'Location'" ng-false-value="''" />Location
+
+<br/>
+
+Type de bien :
+<input type="input" ng-model="recherche.classeStandard.type"/>
+
+<br/>
+
+Surface : 
+<select ng-model="recherche.classeStandard.sufacemin">
+	<option value="">Surface minimale</option>
+	<option ng-repeat="s in listeSurface | orderBy">{{s}}</option>
+</select>
+
+<br/>
+
+Prix :
+<select ng-model="recherche.classeStandard.prixmax">
+	<option value="">Prix maximal</option>
+	<option ng-repeat="p in listePrix | orderBy">{{p}}</option>
+</select>
+
+<br/>
+
+<h1 style="color: lightgreen; text-align: center">Liste des biens immobiliers</h1>
 
 <br />
 
@@ -8,27 +33,21 @@
 	<table class="table table-hover" style="text-align: center;">
 
 		<tr>
-			<th style="text-align: center;">ID</th>
+			<th style="text-align: center;">Photo</th>
 			<th style="text-align: center;">Type</th>
 			<th style="text-align: center;">Statut</th>
 			<th style="text-align: center;">Offre</th>
-			<th style="text-align: center;">Date de disponibilité</th>
-			<th style="text-align: center;">Adresse</th>
 			<th style="text-align: center;">Prix</th>
-			<th style="text-align: center;">Photo</th>
-
+			<th style="text-align: center;">Visualiser le bien</th>
 		</tr>
 
-		<tr ng-repeat="bi in listeBienImmobiliers">
-			<td>{{bi.id}}</td>
+		<tr ng-repeat="bi in listeBi">
+			<td><img ng-src="data:image/JPEG;base64,{{bi.photoBI}}" width="200"/></td>
 			<td>{{bi.classeStandard.type}}</td>
 			<td>{{bi.statut}}</td>
 			<td>{{bi.classeStandard.modeoffre}}</td>
-			<td>{{bi.dateDispo}}</td>
-			<td>{{bi.adresse.numero}} {{bi.adresse.rue}}
-				{{bi.adresse.codePostal}} {{bi.adresse.ville}}</td>
 			<td>{{bi.prix}}</td>
-			<td><img ng-src="data:image/JPEG;base64,{{bi.photoBI}}" width="200"/></td>
+			<td><a href="#" ng-click="afficheBiSeul(bi)"><span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span></a></td>
 		</tr>
 
 	</table>

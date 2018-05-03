@@ -11,3 +11,9 @@
     width: 50%;
 
 }
+
+.header{
+	text-align: center;
+    padding: 20px;
+    background: linear-gradient(to bottom right, dodgerblue, lavender); 
+}

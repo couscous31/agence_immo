@@ -43,7 +43,7 @@ monApp.config(function($routeProvider){
 					//Visite
 					.when('/listevi', {
 						controller : "listeviCtrl",
-						templateUrl : "vues/listevi.html"
+						templateUrl : "vues/conseilImmobilier.html"
 					})
 	
 					.when('/addvi',{
@@ -67,13 +67,18 @@ monApp.config(function($routeProvider){
 					})
 					
 					//Bien immobilier
+					.when("/trouverAllBi", {
+						controller:"listeBiCTRL",
+						templateUrl: "vues/conseilImmobilier.html"
+					})
+					
 					.when("/findAllBi", {
 						controller:"listeBiCtrl",
 						templateUrl: "vues/listeBi.html"
 					})
 						
 					.when("/addBi", {
-						controller:"ajoutBiCtrl", 
+						controller:"ajoutBiCTRL", 
 						templateUrl: "vues/addBi.html"
 					})
 						
