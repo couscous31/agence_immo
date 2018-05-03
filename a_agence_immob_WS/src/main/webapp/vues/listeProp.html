@@ -1,30 +1,36 @@
-
 <h1 style="text-align: center; color: purple">Liste des proprietaires</h1>
 
-<table class="table">
-	<tr>
-		<th>ID</th>
-		<th>NOM</th>
-		<th>CODE POSTAL</th>
-		<th>VILLE</th>
-		<th>NUMERO</th>
-		<th>RUE</th>
-		<th>TEL PRO</th>
-		<th>TEL PERSO</th>
-		<th>Lien</th>
-	</tr>
+<br/>
 
-	<tr ng-repeat="prop in listeProprietaires">
-		<td>{{prop.id}}</td>
-		<td>{{prop.nom}}</td>
-		<td>{{prop.adresse.codePostal}}</td>
-		<td>{{prop.adresse.ville}}</td>
-		<td>{{prop.adresse.numero}}</td>
-		<td>{{prop.adresse.rue}}</td>
-		<td>{{prop.telPro}}</td>
-		<td>{{prop.telPerso}}</td>
-		<td>{{prop.lienGoogleMaps}}</td>
+<div align="center" class="table-responsive">
 
-	</tr>
+	<table class="table table-hover" style="text-align: center;">
+
+		<tr>
+			<th style="text-align: center;">#</th>
+			<th style="text-align: center;">Nom</th>
+			<th style="text-align: center;">Adresse</th>
+			<th style="text-align: center;">Téléphone personnel</th>
+			<th style="text-align: center;">Téléphone professionnel</th>
+			<th style="text-align: center;">Lien</th>
+			<th style="text-align: center;">Supprimer | Modifier</th>
+			<th style="text-align: center;">Liste des biens immobiliers</th>
+		</tr>
+
+		<tr ng-repeat="prop in listeProprietaires">
+			<td>{{prop.id}}</td>
+			<td>{{prop.nom}}</td>
+			<td>{{prop.adresse.numero}} {{prop.adresse.rue}}, {{prop.adresse.codePostal}} {{prop.adresse.ville}}</td>
+			<td>{{prop.telPerso}}</td>
+			<td>{{prop.telPro}}</td>
+			<td>{{prop.lienGoogleMaps}}</td>
+			<td><a href="#" ng-click="supprimerLink(prop.id)"><span
+					class="glyphicon glyphicon-trash" aria-hidden="true"></span></a> | 
+					<a ng-click="modifierLink(prop)"><span
+					class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
+			<td><a href="#" ng-click="afficherBi(prop.bi)"></a></td>
+		</tr>
+
+	</table>
 	
-</table>
+</div>
