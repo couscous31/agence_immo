@@ -4,11 +4,37 @@ monApp
 
 .controller("listePropCTRL",
 		function($scope, propService, $location, $rootScope) {
-			// fonction recuperer la liste des proprietaire
+
+			// 1ere méthode du controller : fonction recuperer la liste des
+			// proprietaire
 			propService.getAll(function(callBack) {
 				$scope.listeProprietaires = callBack;
-			})
+			});
 
+			// 2eme méthode du controller : supprimer un contrat
+			$scope.supprimerLink = function(id) {
+
+				// appel de la fonction supOneContrat du service
+				propService.suppOne(id, function(callBack) {
+
+					if (callBack == 'OK') {
+						propService.getAll(function(callBack) {
+							$scope.listeProprietaires = callBack;
+						});
+					}
+				})
+			};
+
+			// 3eme méthode du controller : modifier un contrat
+			$rootScope.propModif = {
+				id : undefined
+			};
+
+			$scope.modifierLink = function(proprietaire) {
+				$rootScope.propModif = proprietaire;
+				$location.path("updateProp");
+
+			};
 		})
 
 .controller("ajoutPropCTRL", function($scope, propService, $location) {
@@ -36,17 +62,17 @@ monApp
 
 .controller("modifPropCTRL",
 		function($scope, propService, $location, $rootScope) {
-				$scope.proprietaire = {
-					id : null,
-					codePostal : null,
-					numero : null,
-					rue : null,
-					ville : null,
-					nom : null,
-					telPerso : null,
-					telPro : null
-				}
-				// fonction appelée via le bouton modifier
+			$scope.proprietaire = {
+				id : null,
+				codePostal : null,
+				numero : null,
+				rue : null,
+				ville : null,
+				nom : null,
+				telPerso : null,
+				telPro : null
+			}
+			// fonction appelée via le bouton modifier
 			$scope.modifier = function() {
 				propService.modifOne($scope.proprietaire, function(callBack) {
 					if (typeof callBack == "object") {
@@ -70,11 +96,11 @@ monApp
 				$scope.message = "suppression impossible ! "
 			}
 		})
-
 	}
 })
 
 .controller("recPropCTRL", function($scope, propService) {
+
 	$scope.id;
 	$scope.indice = false;
 	$scope.indice1 = false;

@@ -2,32 +2,39 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Agence Immobilière</title>
 
 <!-- ajouter la lib de jquery -->
-<script type="text/javascript" src=assets/resources/js/jquery-3.3.1.js></script>
+<script type="text/javascript" src="assets/resources/js/jquery-3.3.1.js"></script>
 
 <!-- ajouter les libs de bootstrap -->
-<script type="text/javascript" src=assets/resources/js/bootstrap.js></script>
-<link rel="stylesheet" type="text/css"
-	href=assets/resources/CSS/bootstrap.css />
+<script type="text/javascript" src="assets/resources/js/bootstrap.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/resources/CSS/bootstrap.css" />
 
 <!-- ajouter les libs de angular js -->
 <script type="text/javascript" src="assets/resources/js/angular.js"></script>
 <script type="text/javascript" src="assets/resources/js/angular-route.js"></script>
-<script type="text/javascript"
-	src="assets/resources/js/angular-locale_fr-fr.js"></script>
+<script type="text/javascript" src="assets/resources/js/angular-locale_fr-fr.js"></script>
 
 <!-- ajouter mes scripts angular js -->
 <script type="text/javascript" src="assets/js/modules/app.js"></script>
-<script type="text/javascript" src="assets/js/routages/routageProp.js"></script>
-<script type="text/javascript" src="assets/js/routages/routageBI.js"></script>
+
+<script type="text/javascript" src="assets/js/routages/routine.js"></script>
+
 <script type="text/javascript" src="assets/js/controllers/Proprietaire.js"></script>
-<script type="text/javascript" src="assets/js/services/ProprietaireProvider.js"></script>
-<script type="text/javascript"
-	src="assets/js/services/biProvider.js"></script>
 <script type="text/javascript" src="assets/js/controllers/BIController.js"></script>
-	
+<script type="text/javascript" src="assets/js/controllers/clientController.js"></script>
+<script type="text/javascript" src="assets/js/controllers/contratController.js"></script>
+<script type="text/javascript" src="assets/js/controllers/VisiteControllers.js"></script>
+
+<script type="text/javascript" src="assets/js/services/ProprietaireProvider.js"></script>
+<script type="text/javascript" src="assets/js/services/biProvider.js"></script>
+<script type="text/javascript" src="assets/js/services/clientProvider.js"></script>
+<script type="text/javascript" src="assets/js/services/contratProvider.js"></script>
+<script type="text/javascript" src="assets/js/services/VisiteProvider.js"></script>
+
+<!-- Ajouter le style.css -->
+<link rel="stylesheet" type="text/css" href="assets/resources/CSS/monStyle.css" />
 	
 	
 </head>
@@ -46,9 +53,6 @@
 
 	<div class="container">
 		<div ng-view></div>
-
-
-
 	</div>
 
 </body>

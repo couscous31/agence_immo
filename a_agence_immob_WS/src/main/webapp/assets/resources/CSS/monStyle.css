@@ -1,0 +1,13 @@
+/* Création de 2 colonnes */
+
+.leftcolumn{
+    float: left;
+    width: 50%;
+
+}
+
+.rightcolumn{
+    float: left;
+    width: 50%;
+
+}
