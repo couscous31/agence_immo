@@ -118,7 +118,16 @@ monApp.factory("biService", function($http) {
 				})
 
 }
-	
+	function getByIdProp(id_prop, bus) {
+		$http({
+			method : "GET",
+			url : restURL + "/BienImmobilierprop?pIdprop=" + id_prop
+		}).then(function succesCallBack(response) {
+			bus(response.data)
+		}, function errorCallBack(response) {
+
+		})
+	}
 	
 	return {
 		getAll: findAll,
@@ -128,10 +137,12 @@ monApp.factory("biService", function($http) {
 		modifOne : updateOne,
 		findAllBi : getAllBi,
 		addBi : ajoutBi, 
-		localisationBi : geoAdresse 
+		localisationBi : geoAdresse, 
+		getOneprop:getByIdProp
 	}
 
 });
+
 
 //monApp
 //		.factory(

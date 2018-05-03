@@ -113,7 +113,7 @@ monApp
 			} else {
 				$scope.indice = false
 				$scope.indice1 = true;
-				$scope.message = "le proprietaire recherche n'existe pas ! "
+				$scope.message = "le BI rechercher n'existe pas ! "
 			}
 
 		})
@@ -136,4 +136,29 @@ monApp
 	}
 
 })
+
+.controller("recBiPrCTRL", function($scope, biService) {
+	$scope.id_prop;
+	$scope.indice = false;
+	$scope.indice1 = false;
+
+	// fonction appeler via le boutton
+	$scope.rechercherParIDprop = function() {
+		// appel de la fonction getById du service
+		biService.getOneprop($scope.id_prop, function(callBack) {
+			if (typeof callBack == "object") {
+				$scope.indice = true;
+				$scope.indice1 = false;
+				$scope.propOut = callBack;
+			} else {
+				$scope.indice = false
+				$scope.indice1 = true;
+				$scope.message = "le proprietaire recherche n'existe pas ! "
+			}
+
+		})
+
+	}
+})
+
 

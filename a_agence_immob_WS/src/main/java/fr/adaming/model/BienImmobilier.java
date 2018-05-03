@@ -212,8 +212,6 @@ public class BienImmobilier {
 		this.proprietaire = proprietaire;
 	}
 
-	
-	
 	public double getLat() {
 		return lat;
 	}

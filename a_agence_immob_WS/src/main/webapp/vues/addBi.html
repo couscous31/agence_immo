@@ -4,8 +4,11 @@
 <div class="form-group">
 	<label for="exampleInputEmail1" class="col-sm-2 control-label">Type</label>
 	<div class="col-sm-10">
-		<input type="text" class="form-control" id="Type" placeholder="type"
-			ng-model="bienImmobilier.type">
+		<select ng-model="bienImmobilier.type" class="form-control">
+			<option value="">Achat</option>
+			<option value="">Location</option>
+			<option value="">Impeccable</option>
+		</select>
 	</div>
 </div>
 
@@ -61,7 +64,8 @@
 
 <div class="form-group">
 	<label class="col-sm-2 control-label">Choisir la photo du bien</label>
-	 <input type="file" ng-model="bienImmobilier.photoBI" accept="image/*" base-sixty-four-input class="form-control">
+	<input type="file" ng-model="bienImmobilier.photoBI" accept="image/*"
+		base-sixty-four-input class="form-control"></input>
 </div>
 
 
@@ -86,16 +90,23 @@
 <div class="form-group">
 	<label for="exampleInputEmail1" class="col-sm-2 control-label">statut</label>
 	<div class="col-sm-10">
-		<input type="text" class="form-control" id="statut"
-			placeholder="statut" ng-model="bienImmobilier.statut">
+		<select ng-model="bienImmobilier.statut" class="form-control">
+			<option value="">Disponible</option>
+			<option value="">Loue</option>
+			<option value="">Achete</option>
+		</select>
 	</div>
 </div>
+
 
 <div class="form-group">
 	<label for="exampleInputEmail1" class="col-sm-2 control-label">etat</label>
 	<div class="col-sm-10">
-		<input type="text" class="form-control" id="etat" placeholder="etat"
-			ng-model="bienImmobilier.etat">
+		<select ng-model="bienImmobilier.etat" class="form-control">
+			<option value="">A Restaurer</option>
+			<option value="">Correct</option>
+			<option value="">Impeccable</option>
+		</select>
 	</div>
 </div>
 
@@ -134,8 +145,10 @@
 <div class="form-group">
 	<label for="exampleInputEmail1" class="col-sm-2 control-label">meubles</label>
 	<div class="col-sm-10">
-		<input type="text" class="form-control" id="meubles"
-			placeholder="meubles" ng-model="bienImmobilier.meubles">
+		<select ng-model="bienImmobilier.meubles" class="form-control">
+			<option value="">oui</option>
+			<option value="">non</option>
+		</select>
 	</div>
 </div>
 
