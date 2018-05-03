@@ -30,6 +30,7 @@ monApp.factory("biService", function($http) {
 		});
 	}
 	
+	
 	// FONCTION MODIFIER
 	function updateOne(bienImmobilier, bus) {
 		$http.put(restURL + "/BienImmobilier", JSON.stringify(bienImmobilier), {
