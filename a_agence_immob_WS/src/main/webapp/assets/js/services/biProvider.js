@@ -133,9 +133,6 @@ monApp.factory("biService", function($http) {
 	
 	return {
 		getAll: findAll,
-		getAllBi : getAll,
-		getAllSMin : getAllSurface,
-		getAllPMax : getAllPrix,
 		getOne: getById,
 		suppOne: delOne,
 		ajoutOne: addOne,

@@ -67,13 +67,8 @@ monApp.config(function($routeProvider){
 					})
 					
 					//Bien immobilier
-					.when("/trouverAllBi", {
-						controller:"listeBiCTRL",
-						templateUrl: "vues/conseilImmobilier.html"
-					})
-					
 					.when("/findAllBi", {
-						controller:"listeBiCtrl",
+						controller:"listeBiCTRL",
 						templateUrl: "vues/listeBi.html"
 					})
 						
