@@ -14,6 +14,7 @@ monApp.factory("biService", function($http) {
 		})
 
 	}
+
 	
 	// FONCTION AJOUTER
 	function addOne(bienImmobilier, bus) {
@@ -29,6 +30,7 @@ monApp.factory("biService", function($http) {
 		}, function errorCallback(response) {
 		});
 	}
+	
 	
 	// FONCTION MODIFIER
 	function updateOne(bienImmobilier, bus) {

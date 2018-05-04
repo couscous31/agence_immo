@@ -8,6 +8,8 @@ monApp
 
 })
 
+
+
 .controller("ajoutBiCTRL", function($scope, biService, $location) {
 	$scope.bienImmobilier = {
 		type : null,
@@ -136,6 +138,29 @@ monApp
 	}
 
 })
+
+
+
+.controller("BiSeulCTRL", function($scope, bienImmobilier, biService, $rootScope, $location) {
+
+	$scope.bienImmobilier;
+	// fonction appelée via le boutton
+	$scope.afficheBiSeul = function() {
+
+		biService.suppOne($scope.idDel, function(callBack) {
+			if (callBack == 'OK') {
+				$location.path("/findAllBi");
+			} else {
+				$scope.message = "suppression impossible ! "
+			}
+		})
+
+	}
+})
+
+		
+
+
 
 .controller("recBiPrCTRL", function($scope, biService) {
 	$scope.id_prop;
