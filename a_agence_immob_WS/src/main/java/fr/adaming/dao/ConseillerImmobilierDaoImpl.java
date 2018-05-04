@@ -33,4 +33,19 @@ public class ConseillerImmobilierDaoImpl implements IConseillerImmobilierDao {
 		return (ConseillerImmobilier) query.uniqueResult();
 	}
 
+	@Override
+	public ConseillerImmobilier getConseillerById(int id) {
+		
+		String req="FROM ConseillerImmobilier as ci WHERE ci.id=:pId";
+		
+		//ouvrir une session
+		Session s=sf.getCurrentSession();
+		
+		Query query=s.createQuery(req);
+		
+		query.setParameter("pId", id);
+		
+		return (ConseillerImmobilier) query.uniqueResult();
+	}
+
 }

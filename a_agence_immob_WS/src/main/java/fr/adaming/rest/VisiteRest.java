@@ -9,7 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import fr.adaming.model.ConseillerImmobilier;
 import fr.adaming.model.Visite;
+import fr.adaming.service.IConseillerImmobilierService;
+import fr.adaming.service.IEnvoyerMail;
 import fr.adaming.service.IVisiteService;
 
 @RestController
@@ -17,6 +21,14 @@ public class VisiteRest {
 
 	@Autowired
 	private IVisiteService viService;
+	
+	@Autowired
+	private IEnvoyerMail envoiMail;
+	
+	@Autowired
+	private IConseillerImmobilierService consService;
+	
+	
 
 	//ok
 	@RequestMapping(value = "/listevi", method = RequestMethod.GET, produces = { "application/json" })
@@ -33,7 +45,12 @@ public class VisiteRest {
 	//OK
 	@RequestMapping(value = "/addvi", method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
 	public Visite ajouterVisite(@RequestBody Visite vi) {
-		return viService.addVisite(vi);
+		
+		Visite viOut=viService.addVisite(vi);
+		ConseillerImmobilier consImmo=consService.getConseillerById(vi.getConseillerimmobilier().getId());
+		envoiMail.envoyerMessageAjout(consImmo.getIdUsername());
+		
+		return viOut;
 	}
 
 	//Ok

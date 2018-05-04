@@ -1,7 +1,5 @@
 package fr.adaming.rest;
 
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,10 +14,15 @@ import fr.adaming.service.IConseillerImmobilierService;
 public class CIRest {
 	@Autowired
 	private IConseillerImmobilierService ciService;
-	
-	@RequestMapping(value="/listeLogin",method=RequestMethod.GET,produces="application/json")	
-	public ConseillerImmobilier isExist(@RequestParam("pidUsername") String idUsername, @RequestParam("pMdp") String mdp) {
+
+	@RequestMapping(value = "/listeLogin", method = RequestMethod.GET, produces = "application/json")
+	public ConseillerImmobilier isExist(@RequestParam("pidUsername") String idUsername,
+			@RequestParam("pMdp") String mdp) {
 		return ciService.isExist(idUsername, mdp);
 	}
 
+	@RequestMapping(value="/getbyId", method = RequestMethod.GET, produces="application/json")
+	public ConseillerImmobilier getConseillerById(@RequestParam("pId") int id) {
+		return ciService.getConseillerById(id);
+	}
 }
