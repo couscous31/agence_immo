@@ -1,10 +1,10 @@
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse" class="header">
 
 	<ul class="nav nav-tabs">
-		<li><a href="#"><span class="glyphicon glyphicon-home"
+		<li><a href="#!listevi"><span class="glyphicon glyphicon-home"
 				aria-hidden="true"></span></a></li>
 
-		<li class="dropdown"><a href="#" class="dropdown-toggle"
+		<li class="dropdown"><a href="#!listevi" class="dropdown-toggle"
 			data-toggle="dropdown" role="button" aria-haspopup="true"
 			aria-expanded="false">Propriétaires<span class="caret"></span></a>
 			<ul class="dropdown-menu">
@@ -13,9 +13,10 @@
 				<li role="separator" class="divider"></li>
 				<li><a href="#!addProp">Ajouter</a></li>
 				<li><a href="#!updateProp">Modifier</a></li>
-			</ul></li>
+			</ul>
+		</li>
 
-		<li class="dropdown"><a href="#" class="dropdown-toggle"
+		<li class="dropdown"><a href="#!listevi" class="dropdown-toggle"
 			data-toggle="dropdown" role="button" aria-haspopup="true"
 			aria-expanded="false">Clients<span class="caret"></span></a>
 			<ul class="dropdown-menu">
@@ -24,9 +25,10 @@
 				<li role="separator" class="divider"></li>
 				<li><a href="#!addClient">Ajouter</a></li>
 				<li><a href="#!updateClient">Modifier</a></li>
-			</ul></li>
+			</ul>
+		</li>
 
-		<li class="dropdown"><a href="#" class="dropdown-toggle"
+		<li class="dropdown"><a href="#!listevi" class="dropdown-toggle"
 			data-toggle="dropdown" role="button" aria-haspopup="true"
 			aria-expanded="false">Contrats<span class="caret"></span></a>
 			<ul class="dropdown-menu">
@@ -34,7 +36,11 @@
 				<li role="separator" class="divider"></li>
 				<li><a href="#!addContrat">Ajouter</a></li>
 				<li><a href="#!updateContrat">Modifier</a></li>
-			</ul></li>
+			</ul>
+		</li>
+		
+		<li><a href="#!findAllBi"><span class="glyphicon glyphicon-remove"
+				aria-hidden="true"></span></a></li>
 
 	</ul>
 </nav>
@@ -57,15 +63,16 @@
 				<th>Heure</th>
 				<th>Bien immobilier</th>
 				<th>Client</th>
+				<th>Supprimer | Modifier</th>
 			</tr>
 
 			<tr ng-repeat="vi in listevi">
-				<td>{{vi.conseillerimmobilier.id}}</td>
+				<td>{{vi.conseillerimmobilier.idUsername}}</td>
 				<td>{{vi.id}}</td>
 				<td>{{vi.datevisite}}</td>
 				<td>{{vi.heure}}</td>
 				<td>{{vi.bienImmo.id}}</td>
-				<td>{{vi.client.id}}</td>
+				<td>{{vi.client.nom}}</td>
 				<td><a href="#" ng-click="supprimerBouton(vi.id)"><span
 						class="glyphicon glyphicon-trash" aria-hidden="true"></span></a> | <a
 					ng-click="modifierBouton(vi)"><span
@@ -79,32 +86,6 @@
 </div>
 
 <div class="rightcolumn">
-
-	<input type="checkbox" ng-model="recherche.classeStandard.modeoffre"
-		ng-true-value="'Achat'" ng-false-value="''" />Achat 
-	<input type="checkbox" ng-model="recherche2.classeStandard.modeoffre"
-		ng-true-value="'Location'" ng-false-value="''" />Location 
-		
-	<br />
-	
-	Type de bien : 
-	<input type="input" ng-model="recherche.classeStandard.type" />
-	
-	<br />
-	
-	Surface : 
-	<select ng-model="recherche.classeStandard.sufacemin">
-		<option value="">Surface minimale</option>
-		<option ng-repeat="s in listeSurface | orderBy">{{s}}</option>
-	</select> 
-	
-	<br /> 
-	
-	Prix : 
-	<select ng-model="recherche.classeStandard.prixmax">
-		<option value="">Prix maximal</option>
-		<option ng-repeat="p in listePrix | orderBy">{{p}}</option>
-	</select>
 
 	<h1 style="color: lightgreen; text-align: center">Liste des bien immobiliers</h1>
 
@@ -124,8 +105,7 @@
 				<th style="text-align: center;">Visualiser le bien</th>
 			</tr>
 
-			<tr
-				ng-repeat="bi in listeBi | filter : recherche | filter : recherche2">
+			<tr ng-repeat="bi in listeBienImmobiliers">
 				<td>{{bi.id}}</td>
 				<td>{{bi.classeStandard.type}}</td>
 				<td>{{bi.classeStandard.modeoffre}}</td>
