@@ -1,97 +1,104 @@
 <nav class="navbar navbar-inverse" class="header">
 
 	<ul class="nav nav-tabs">
-		<li><a href="#!listevi"><span class="glyphicon glyphicon-home"
-				aria-hidden="true"></span></a></li>
+		<li><a href="#!listevi"><span
+				class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
 
-		<li class="dropdown"><a href="#!addContrat" class="dropdown-toggle"
-			data-toggle="dropdown" role="button" aria-haspopup="true"
-			aria-expanded="false">Propriétaires<span class="caret"></span></a>
+		<li class="dropdown"><a href="#!addContrat"
+			class="dropdown-toggle" data-toggle="dropdown" role="button"
+			aria-haspopup="true" aria-expanded="false">Propriétaires<span
+				class="caret"></span></a>
 			<ul class="dropdown-menu">
 				<li><a href="#!findAllProp">Liste des propriétaires</a></li>
 				<li><a href="#!searchProp">Rechercher un propriétaire</a></li>
 				<li role="separator" class="divider"></li>
 				<li><a href="#!addProp">Ajouter</a></li>
 				<li><a href="#!updateProp">Modifier</a></li>
-			</ul>
-		</li>
+			</ul></li>
 
-		<li class="dropdown"><a href="#!addContrat" class="dropdown-toggle"
-			data-toggle="dropdown" role="button" aria-haspopup="true"
-			aria-expanded="false">Clients<span class="caret"></span></a>
+		<li class="dropdown"><a href="#!addContrat"
+			class="dropdown-toggle" data-toggle="dropdown" role="button"
+			aria-haspopup="true" aria-expanded="false">Clients<span
+				class="caret"></span></a>
 			<ul class="dropdown-menu">
 				<li><a href="#!findAllClient">Liste des clients</a></li>
 				<li><a href="#!searchClient">Rechercher un client</a></li>
 				<li role="separator" class="divider"></li>
 				<li><a href="#!addClient">Ajouter</a></li>
 				<li><a href="#!updateClient">Modifier</a></li>
-			</ul>
-		</li>
+			</ul></li>
 
-		<li class="dropdown"><a href="#!addContrat" class="dropdown-toggle"
-			data-toggle="dropdown" role="button" aria-haspopup="true"
-			aria-expanded="false">Contrats<span class="caret"></span></a>
+		<li class="dropdown"><a href="#!addContrat"
+			class="dropdown-toggle" data-toggle="dropdown" role="button"
+			aria-haspopup="true" aria-expanded="false">Contrats<span
+				class="caret"></span></a>
 			<ul class="dropdown-menu">
 				<li><a href="#!findAllContrat">Liste des contrats</a></li>
 				<li role="separator" class="divider"></li>
 				<li><a href="#!addContrat">Ajouter</a></li>
 				<li><a href="#!updateContrat">Modifier</a></li>
-			</ul>
-		</li>
-		
+			</ul></li>
+
 		<li><a href="#!findAllBi">Biens immobiliers</a></li>
-		
-		<li><a href="#!findAllBi2"><span class="glyphicon glyphicon-remove"
-				aria-hidden="true"></span></a></li>
+
+		<li><a href="#!findAllBi2"><span
+				class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></li>
 
 	</ul>
 </nav>
 
-<br/>
-
-<h1 style="color: lightgreen; text-align: center; background-color: #F0F8FF">Ajouter un contrat</h1>
-
 <br />
 
-<form class="form-horizontal" style="background-color: #F0F8FF">
+<div style="background-color: #F0F8FF">
 
-	<div class="form-group">
-		<label for="exampleInputEmail1" class="col-sm-2 control-label">Référence</label>
-		<div class="col-sm-10">
-			<input type="text" class="form-control" id="Reference"
-				placeholder="référence" ng-model="contrat.ref">
-		</div>
-	</div>
+	<br />
+	<h1
+		style="color: lightgreen; text-align: center; background-color: #F0F8FF">Ajouter
+		un contrat</h1>
 
-	<div class="form-group">
-		<label for="exampleInputEmail1" class="col-sm-2 control-label">Date
-			de signature</label>
-		<div class="col-sm-10">
-			<input type="date" class="form-control" id="DateSignature"
-				placeholder="date" ng-model="contrat.dateSignature">
-		</div>
-	</div>
+	<br />
 
-	<div class="form-group">
-		<label for="exampleInputEmail1" class="col-sm-2 control-label">Client</label>
-		<div class="col-sm-10">
-			<input type="number" class="form-control" id="Client"
-				placeholder="client" ng-model="contrat.client.id">
-		</div>
-	</div>
+	<form class="form-horizontal" style="background-color: #F0F8FF">
 
-	<div class="form-group">
-		<label for="exampleInputEmail1" class="col-sm-2 control-label">Bien
-			immobilier</label>
-		<div class="col-sm-10">
-			<input type="number" class="form-control" id="BI"
-				placeholder="bien immobilier" ng-model="contrat.bi.id">
+		<div class="form-group">
+			<label for="exampleInputEmail1" class="col-sm-2 control-label">Référence</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="Reference"
+					placeholder="référence" ng-model="contrat.ref">
+			</div>
 		</div>
-	</div>
 
-	<div class="form-group">
-		<div class="col-sm-offset-2 col-sm-10">
-			<button class="btn btn-info" ng-click="ajouterContrat()">Ajouter</button>
+		<div class="form-group">
+			<label for="exampleInputEmail1" class="col-sm-2 control-label">Date
+				de signature</label>
+			<div class="col-sm-10">
+				<input type="date" class="form-control" id="DateSignature"
+					placeholder="date" ng-model="contrat.dateSignature">
+			</div>
 		</div>
-	</div>
-</form>
+
+		<div class="form-group">
+			<label for="exampleInputEmail1" class="col-sm-2 control-label">Client</label>
+			<div class="col-sm-10">
+				<input type="number" class="form-control" id="Client"
+					placeholder="client" ng-model="contrat.client.id">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="exampleInputEmail1" class="col-sm-2 control-label">Bien
+				immobilier</label>
+			<div class="col-sm-10">
+				<input type="number" class="form-control" id="BI"
+					placeholder="bien immobilier" ng-model="contrat.bi.id">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button class="btn btn-info" ng-click="ajouterContrat()">Ajouter</button>
+			</div>
+		</div>
+	</form>
+</div>
+</div>

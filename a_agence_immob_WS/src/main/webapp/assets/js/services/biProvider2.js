@@ -1,4 +1,4 @@
-monApp.factory("biService", function($http){
+monApp.factory("biService2", function($http){
 	var restUrl = "http://localhost:8080/a_agence_immob_WS";
 	function getAll(busSC){
 		$http({

@@ -1,11 +1,11 @@
-monApp.controller("listeBiCtrl", function($scope, biService,$rootScope,$location){
-	biService.getAllBi(function(callBack){
+monApp.controller("listeBiCtrl", function($scope, biService2,$rootScope,$location){
+	biService2.getAllBi(function(callBack){
 		$scope.listeBi=callBack;
 	});
-	biService.getAllSMin(function(callBack){
+	biService2.getAllSMin(function(callBack){
 		$scope.listeSurface=callBack;
 	});
-	biService.getAllPMax(function(callBack){
+	biService2.getAllPMax(function(callBack){
 		$scope.listePrix=callBack;
 	});
 	
