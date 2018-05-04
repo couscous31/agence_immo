@@ -2,9 +2,12 @@ monApp
 
 .controller("listeBiCTRL", function($scope, biService, $location, $rootScope) {
 	
+	console.log("---coucou1");
+	
 	// 1ere fonction du controller : recuperer la liste des biens immobiliers
 	biService.getAll(function(callBack) {
 		$scope.listeBienImmobiliers = callBack;
+		console.log("---coucou2");
 	});
 	
 	// 2eme fct du controller : supprimer un bi
@@ -29,6 +32,15 @@ monApp
 	$scope.modifierLink = function(bi) {
 		$rootScope.biModif = bi;
 		$location.path("updateBi");
+	};
+	
+	// 4eme fct du controller : afficher le bi du cote de Ci
+	$scope.biRec = undefined;
+	
+	$scope.afficherBiCi = function(bi) {
+		
+		$rootScope.biRec = bi;
+		$location.path("afficherBiSeulCi");
 	};
 
 })
@@ -197,23 +209,20 @@ monApp
 //
 //})
 
-
-.controller("BiSeulCTRL", function($scope, bienImmobilier, biService, $rootScope, $location) {
-
-	$scope.bienImmobilier;
-	// fonction appelée via le boutton
-	$scope.afficheBiSeul = function() {
-
-		biService.suppOne($scope.idDel, function(callBack) {
-			if (callBack == 'OK') {
-				$location.path("/findAllBi");
-			} else {
-				$scope.message = "suppression impossible ! "
-			}
-		})
-
-	}
+//controller pour afficher un bi du côté client
+.controller("BiSeulCTRL", function($scope, $rootScope, $location) {
+	
+	$scope.biRec = $rootScope.biRec;
+	
 })
+
+//controller pour afficher un bi du côté du Ci
+.controller("BiSeulCiCTRL", function($scope, $rootScope, $location) {
+	
+	$scope.biRec = $rootScope.biRec;
+
+})
+
 
 		
 .controller("recBiPrCTRL", function($scope, biService) {

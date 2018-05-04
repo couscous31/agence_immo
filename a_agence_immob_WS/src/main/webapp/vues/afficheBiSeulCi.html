@@ -1,10 +1,35 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<h1>BI SEUL</h1>
 
-</body>
-</html>
+<h1>Cas d'un bien à louer</h1>
+
+<ul class="list-group">
+  <li class="list-group-item">Photo : <img ng-src="data:image/JPEG;base64,{{biRec.photoBI}}" width="200"/></li>
+  <li class="list-group-item">Offre : {{}}</li>
+  <li class="list-group-item">Adresse : {{biRec.adresse.numero}} {{biRec.adresse.rue}}, {{biRec.adresse.codePostal}} {{biRec.adresse.ville}}</li>
+  <li class="list-group-item">Date de disponibilité : {{biRec.dateDispo}}</li>
+  <li class="list-group-item">Date de soumission : {{biRec.dateSoumission}}</li>
+  <li class="list-group-item">Revenu cadastral : {{biRec.revenuCadastral}}</li>
+  <li class="list-group-item">Statut : {{biRec.statut}}</li>
+  <li class="list-group-item">Etat : {{biRec.etat}}</li>
+  <li class="list-group-item">Loyer : {{biRec.loyer}}</li>
+  <li class="list-group-item">Charges : {{biRec.charges}}</li>
+  <li class="list-group-item">Caution : {{biRec.caution}}</li>
+  <li class="list-group-item">Meublé ou non meublé : {{biRec.meubles}}</li>
+  <li class="list-group-item">Bail : {{biRec.typeBail}}</li>
+</ul>
+
+<h1>Cas d'un bien à Acheter</h1>
+
+<ul class="list-group">
+  <li class="list-group-item">Photo : <img ng-src="data:image/JPEG;base64,{{biRec.photoBI}}" width="200"/></li>
+  <li class="list-group-item">Offre : {{}}</li>
+  <li class="list-group-item">Adresse : {{biRec.adresse.numero}} {{biRec.adresse.rue}}, {{biRec.adresse.codePostal}} {{biRec.adresse.ville}}</li>
+  <li class="list-group-item">Date de disponibilité : {{biRec.dateDispo}}</li>
+  <li class="list-group-item">Date de soumission : {{biRec.dateSoumission}}</li>
+  <li class="list-group-item">Revenu cadastral : {{biRec.revenuCadastral}}</li>
+  <li class="list-group-item">Statut : {{biRec.statut}}</li>
+  <li class="list-group-item">Etat : {{biRec.etat}}</li>
+  <li class="list-group-item">Prix d'achat : {{biRec.prixAchat}}</li>
+</ul>
+
+

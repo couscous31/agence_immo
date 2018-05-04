@@ -96,7 +96,18 @@ monApp.config(function($routeProvider){
 						controller:"recBiCTRL", 
 						templateUrl: "vues/rechercheBi.html"
 					})
-						
+					
+					.when("/afficherBiSeul", {
+						controller:"BiSeulCTRL",
+						templateUrl: "vues/afficheBiSeul.html"
+					})
+					
+					.when("/afficherBiSeulCi", {
+						controller:"BiSeulCiCTRL",
+						templateUrl: "vues/afficheBiSeulCi.html"
+					})
+					
+					
 					//Client
 					.when("/findAllClient", {
 						controller:"listeClientCtrl",

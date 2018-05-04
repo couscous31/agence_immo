@@ -4,14 +4,16 @@ monApp.factory("biService", function($http) {
 
 	// FONCTION LISTE
 	function findAll(bus) {
+		console.log("---yo");
 		$http({
 			method : "GET",
 			url : restURL + "/listeBi"
 		}).then(function succesCallBack(response) {
+			console.log(response.data);
 			bus(response.data);
 		}, function erreurCallback(response) {
 
-		})
+		});
 
 	}
 
@@ -110,8 +112,6 @@ monApp.factory("biService", function($http) {
 		suppOne: delOne,
 		ajoutOne: addOne,
 		modifOne : updateOne,
-//		findAllBi : getAllBi,
-//		addBi : ajoutBi, 
 		localisationBi : geoAdresse, 
 		getOneprop:getByIdProp
 	}

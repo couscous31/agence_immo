@@ -57,6 +57,7 @@
 			<th style="text-align: center;">Adresse</th>
 			<th style="text-align: center;">Prix</th>
 			<th style="text-align: center;">Surface</th>
+			<th style="text-align: center;">Visualiser le bien</th>
 		</tr>
 
 		<tr ng-repeat="bi in listeBi | filter : recherche | filter : recherche2">
@@ -66,6 +67,8 @@
 			<td>{{bi.adresse.numero}} {{bi.adresse.rue}}, {{bi.adresse.codePostal}} {{bi.adresse.ville}}</td>
 			<td>{{bi.prix}}</td>
 			<td>{{bi.classeStandard.sufacemin}}</td>
+			<td><a ng-click="afficherBi(bi)"><span
+					class="glyphicon glyphicon-search" aria-hidden="true"></span></a></td>
 		</tr>
 
 	</table>

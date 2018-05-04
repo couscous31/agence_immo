@@ -1,1 +1,36 @@
 <h1>BI SEUL</h1>
+
+<button class="button2" onclick="show()" >Bien à louer</button>
+<button class="button2" onclick="show2()" >Bien à acheter</button>
+
+<ul class="list-group text" id="1">
+  <li class="list-group-item">Photo : <img ng-src="data:image/JPEG;base64,{{biRec.photoBI}}" width="200"/></li>
+  <li class="list-group-item">Offre : {{}}</li>
+  <li class="list-group-item">Adresse : {{biRec.adresse.numero}} {{biRec.adresse.rue}}, {{biRec.adresse.codePostal}} {{biRec.adresse.ville}}</li>
+  <li class="list-group-item">Date de disponibilité : {{biRec.dateDispo}}</li>
+  <li class="list-group-item">Date de soumission : {{biRec.dateSoumission}}</li>
+  <li class="list-group-item">Revenu cadastral : {{biRec.revenuCadastral}}</li>
+  <li class="list-group-item">Statut : {{biRec.statut}}</li>
+  <li class="list-group-item">Etat : {{biRec.etat}}</li>
+  <li class="list-group-item">Loyer : {{biRec.loyer}}</li>
+  <li class="list-group-item">Charges : {{biRec.charges}}</li>
+  <li class="list-group-item">Caution : {{biRec.caution}}</li>
+  <li class="list-group-item">Meublé ou non meublé : {{biRec.meubles}}</li>
+  <li class="list-group-item">Bail : {{biRec.typeBail}}</li>
+</ul>
+
+
+
+<ul class="list-group text" id="2">
+  <li class="list-group-item">Photo : <img ng-src="data:image/JPEG;base64,{{biRec.photoBI}}" width="200"/></li>
+  <li class="list-group-item">Offre : {{}}</li>
+  <li class="list-group-item">Adresse : {{biRec.adresse.numero}} {{biRec.adresse.rue}}, {{biRec.adresse.codePostal}} {{biRec.adresse.ville}}</li>
+  <li class="list-group-item">Date de disponibilité : {{biRec.dateDispo}}</li>
+  <li class="list-group-item">Date de soumission : {{biRec.dateSoumission}}</li>
+  <li class="list-group-item">Revenu cadastral : {{biRec.revenuCadastral}}</li>
+  <li class="list-group-item">Statut : {{biRec.statut}}</li>
+  <li class="list-group-item">Etat : {{biRec.etat}}</li>
+  <li class="list-group-item">Prix d'achat : {{biRec.prixAchat}}</li>
+</ul>
+
+
