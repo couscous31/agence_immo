@@ -1,10 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>fr.adaming.toulouse</groupId>
-  <artifactId>a_agence_immob_WS</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
-  <dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>fr.adaming.toulouse</groupId>
+	<artifactId>a_agence_immob_WS</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<dependencies>
 		<!-- Librairies de Hibernate -->
 		<!-- Hibernate Core -->
 		<dependency>
@@ -95,13 +96,14 @@
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
-		<!-- jackson-databind : implémentation de jackson qui permet de mapper les objets java en objets jason -->
+		<!-- jackson-databind : implémentation de jackson qui permet de mapper 
+			les objets java en objets jason -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.4.2</version>
 		</dependency>
-		
+
 		<!-- Librairies de validation -->
 		<!-- hibernate-validator -->
 		<dependency>
@@ -116,7 +118,7 @@
 			<artifactId>validation-api</artifactId>
 			<version>1.1.0.Final</version>
 		</dependency>
-		
+
 		<!-- Librairies de Spring Security -->
 		<!-- Spring security core -->
 		<dependency>
@@ -145,7 +147,7 @@
 			<artifactId>spring-security-config</artifactId>
 			<version>3.2.10.RELEASE</version>
 		</dependency>
-		
+
 		<!-- pour la gestion des images -->
 		<!--commons-codec -->
 		<dependency>
@@ -168,9 +170,21 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.3</version>
 		</dependency>
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>1.6.0</version>
+		</dependency>
 
+		<!-- Ajout de pieces jointes dans les mails -->
+		<!-- activation -->
+		<dependency>
+			<groupId>javax.activation</groupId>
+			<artifactId>activation</artifactId>
+			<version>1.1</version>
+		</dependency>
 	</dependencies>
-  <build>
+	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
