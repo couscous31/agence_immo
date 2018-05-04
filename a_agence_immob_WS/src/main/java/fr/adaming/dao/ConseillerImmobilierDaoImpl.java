@@ -15,7 +15,7 @@ public class ConseillerImmobilierDaoImpl implements IConseillerImmobilierDao {
 	@Autowired
 	private SessionFactory sf;
 	
-	public ConseillerImmobilier isExist(ConseillerImmobilier ci) {
+	public ConseillerImmobilier isExist(String idUsername, String mdp) {
 		
 		//ouvrir une session
 		Session s = sf.getCurrentSession();
@@ -27,8 +27,8 @@ public class ConseillerImmobilierDaoImpl implements IConseillerImmobilierDao {
 		Query query = s.createQuery(req);
 		
 		//passage des paramètres
-		query.setParameter("pidUsername", ci.getIdUsername());
-		query.setParameter("pMdp", ci.getMdp());
+		query.setParameter("pidUsername", idUsername);
+		query.setParameter("pMdp", mdp);
 		
 		return (ConseillerImmobilier) query.uniqueResult();
 	}

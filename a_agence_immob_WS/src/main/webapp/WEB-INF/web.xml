@@ -25,7 +25,7 @@
 	
 		<!-- Déclaration de la page de lancement -->
 	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
+		<welcome-file>index10.html</welcome-file>
 	</welcome-file-list>
 	
 </web-app>

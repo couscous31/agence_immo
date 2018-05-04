@@ -1,16 +1,15 @@
 monApp
  
-.controller('LoginController',
-    ['$scope', '$rootScope', '$location', 'AuthenticationService',
-    function ($scope, $rootScope, $location, AuthenticationService) {
-        // reset login status
-        AuthenticationService.ClearCredentials();
- 
+.controller('LoginController',function ($scope, $rootScope, $location, ciService) {
+
+		$scope.ci={
+				idUsername : '',
+				mdp : ''
+		};
         $scope.login = function () {
             $scope.dataLoading = true;
-            AuthenticationService.Login($scope.username, $scope.password, function(response) {
+            ciService.Login($scope.username, $scope.password, function(response) {
                 if(response.success) {
-                    AuthenticationService.SetCredentials($scope.username, $scope.password);
                     $location.path('/');
                 } else {
                     $scope.error = response.message;
@@ -18,4 +17,4 @@ monApp
                 }
             });
         };
-    }]);
+    });

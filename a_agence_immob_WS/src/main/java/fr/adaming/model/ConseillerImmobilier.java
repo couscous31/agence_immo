@@ -46,6 +46,9 @@ public class ConseillerImmobilier implements Serializable {
 	public ConseillerImmobilier() {
 		super();
 	}
+	public ConseillerImmobilier(String idUsername, String mdp) {
+		super();
+	}
 	public ConseillerImmobilier(String idUsername, String mdp, boolean active) {
 		super();
 		this.idUsername = idUsername;

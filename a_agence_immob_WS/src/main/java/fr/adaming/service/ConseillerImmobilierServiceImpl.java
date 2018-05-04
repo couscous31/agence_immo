@@ -15,8 +15,8 @@ public class ConseillerImmobilierServiceImpl implements IConseillerImmobilierSer
 		private IConseillerImmobilierDao ciDao;
 
 	@Override
-	public ConseillerImmobilier isExist(ConseillerImmobilier ci) {
-		return ciDao.isExist(ci);
+	public ConseillerImmobilier isExist(String idUsername, String mdp) {
+		return ciDao.isExist(idUsername, mdp);
 	}
 
 }
