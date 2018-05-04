@@ -19,4 +19,10 @@ public class ConseillerImmobilierServiceImpl implements IConseillerImmobilierSer
 		return ciDao.isExist(idUsername, mdp);
 	}
 
+	@Override
+	public ConseillerImmobilier getConseillerById(int id) {
+		
+		return ciDao.getConseillerById(id);
+	}
+
 }

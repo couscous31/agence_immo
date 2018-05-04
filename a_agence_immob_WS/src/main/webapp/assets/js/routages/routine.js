@@ -71,6 +71,11 @@ monApp.config(function($routeProvider){
 						controller:"listeBiCTRL",
 						templateUrl: "vues/listeBi.html"
 					})
+					
+					.when("/findAllBi2", {
+						controller:"listeBiCtrl",
+						templateUrl: "vues/afficheListeBi2.html"
+					})
 						
 					.when("/addBi", {
 						controller:"ajoutBiCTRL", 
@@ -119,6 +124,6 @@ monApp.config(function($routeProvider){
 					})
 					
 					.otherwise({
-						redirectTo : "/findAllBi"})
+						redirectTo : "/findAllBi2"})
 	
 });

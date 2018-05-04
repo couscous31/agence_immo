@@ -5,5 +5,6 @@ import fr.adaming.model.ConseillerImmobilier;
 public interface IConseillerImmobilierService {
 	
 	public ConseillerImmobilier isExist(String idUsername, String mdp);
+	public ConseillerImmobilier getConseillerById(int id);
 
 }
