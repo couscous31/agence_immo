@@ -1,6 +1,10 @@
-<input type="checkbox" ng-model="recherche.classeStandard.modeoffre"  ng-true-value="'Achat'" ng-false-value="''" />Achat
-<input type="checkbox" ng-model="recherche2.classeStandard.modeoffre"  ng-true-value="'Location'" ng-false-value="''" />Location
+<!-- <input type="checkbox" ng-model="recherche.classeStandard.modeoffre"  ng-true-value="'Achat'" ng-false-value="''" />Acheter -->
+<!-- <input type="checkbox" ng-model="recherche2.classeStandard.modeoffre"  ng-true-value="'Location'" ng-false-value="''" />Louer -->
 <br/>
+Prestation Acheter ou Louer :
+<input type="input" ng-model="recherche.classeStandard.modeoffre"/>
+<br/>
+
 Type de bien :
 <input type="input" ng-model="recherche.classeStandard.type"/>
 <br/>
@@ -26,6 +30,7 @@ Prix :
 	<table class="table table-hover" style="text-align: center;">
 
 		<tr>
+		<th style="text-align: center;">Photo</th>
 			<th style="text-align: center;">ID</th>
 			<th style="text-align: center;">Type</th>
 			<th style="text-align: center;">Offre</th>
@@ -37,6 +42,7 @@ Prix :
 		</tr>
 
 		<tr ng-repeat="bi in listeBi | filter : recherche | filter : recherche2">
+		<td><img ng-src="data:image/JPEG;base64,{{bi.photoBI}}" width="200"/></td>
 			<td>{{bi.id}}</td>
 			<td>{{bi.classeStandard.type}}</td>
 			<td>{{bi.classeStandard.modeoffre}}</td>
