@@ -1,5 +1,5 @@
 <form>
-Id du proprietaire recherche : <input type="number" ng-model="id"></input>
+Id du bien recherche : <input type="number" ng-model="id"></input>
 <button ng-click="rechercherParID()">Rechercher</button>
 </form>
 
@@ -16,7 +16,9 @@ Id du proprietaire recherche : <input type="number" ng-model="id"></input>
 			<th style="text-align: center;">Code Postal</th>
 			<th style="text-align: center;">Ville</th>
 			<th style="text-align: center;">Prix</th>
+			
 		</tr>
+
 
 		<tr>
 			<td>{{propOut.id}}</td>
@@ -27,8 +29,14 @@ Id du proprietaire recherche : <input type="number" ng-model="id"></input>
 			<td>{{propOut.adresse.codePostal}}</td>
 			<td>{{propOut.adresse.ville}}</td>
 			<td>{{propOut.prix}}</td>
+			
 		</tr>
 
 	</table>
+
+<h1> Plan google Maps </h1>
+
+<!-- <img src="https://maps.googleapis.com/maps/api/staticmap?center={{lat}},{{lng}}&zoom=12&size=600x400"/> -->
+<img src="https://maps.googleapis.com/maps/api/staticmap?center={{lat}},{{lng}}&markers=color:red%7Clabel:C%7C{{lat}},{{lng}}&zoom=12&size=600x400"/>
 
 </div>
