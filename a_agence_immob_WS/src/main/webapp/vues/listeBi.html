@@ -1,30 +1,56 @@
-<input type="checkbox" ng-model="recherche.classeStandard.modeoffre"  ng-true-value="'Achat'" ng-false-value="''" />Achat
-<input type="checkbox" ng-model="recherche2.classeStandard.modeoffre"  ng-true-value="'Location'" ng-false-value="''" />Location
+<nav class="navbar navbar-inverse" class="header">
+
+	<ul class="nav nav-tabs">
+		<li><a href="#!listevi"><span class="glyphicon glyphicon-home"
+				aria-hidden="true"></span></a></li>
+
+		<li class="dropdown"><a href="#!findAllBi" class="dropdown-toggle"
+			data-toggle="dropdown" role="button" aria-haspopup="true"
+			aria-expanded="false">Propriétaires<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="#!findAllProp">Liste des propriétaires</a></li>
+				<li><a href="#!searchProp">Rechercher un propriétaire</a></li>
+				<li role="separator" class="divider"></li>
+				<li><a href="#!addProp">Ajouter</a></li>
+				<li><a href="#!updateProp">Modifier</a></li>
+			</ul>
+		</li>
+
+		<li class="dropdown"><a href="#!findAllBi" class="dropdown-toggle"
+			data-toggle="dropdown" role="button" aria-haspopup="true"
+			aria-expanded="false">Clients<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="#!findAllClient">Liste des clients</a></li>
+				<li><a href="#!searchClient">Rechercher un client</a></li>
+				<li role="separator" class="divider"></li>
+				<li><a href="#!addClient">Ajouter</a></li>
+				<li><a href="#!updateClient">Modifier</a></li>
+			</ul>
+		</li>
+
+		<li class="dropdown"><a href="#!findAllBi" class="dropdown-toggle"
+			data-toggle="dropdown" role="button" aria-haspopup="true"
+			aria-expanded="false">Contrats<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="#!findAllContrat">Liste des contrats</a></li>
+				<li role="separator" class="divider"></li>
+				<li><a href="#!addContrat">Ajouter</a></li>
+				<li><a href="#!updateContrat">Modifier</a></li>
+			</ul>
+		</li>
+		
+		<li><a href="#!findAllBi">Biens immobiliers</a></li>
+		
+		<li><a href="#!findAllBi2"><span class="glyphicon glyphicon-remove"
+				aria-hidden="true"></span></a></li>
+
+	</ul>
+</nav>
 
 <br/>
 
-Type de bien : 
-<input type="input" ng-model="recherche.classeStandard.type"/>
-
-<br/>
-
-Surface :  
-<select ng-model="recherche.classeStandard.sufacemin">
-	<option value="">Surface minimale</option>
-	<option ng-repeat="s in listeSurface | orderBy">{{s}}</option>
-</select>
-
-<br/>
-
-Prix : 
-<select ng-model="recherche.classeStandard.prixmax">
-	<option value="">Prix maximal</option>
-	<option ng-repeat="p in listePrix | orderBy">{{p}}</option>
-</select>
-
-<br/>
-
-<h1 style="color: lightgreen; text-align: center">Liste des biens immobiliers</h1>
+<h1 style="color: lightgreen; text-align: center">Liste des bien
+	immobiliers</h1>
 
 <br />
 
@@ -33,30 +59,31 @@ Prix :
 	<table class="table table-hover" style="text-align: center;">
 
 		<tr>
-			<th style="text-align: center;">Photo</th>
+			<th style="text-align: center;">#</th>
 			<th style="text-align: center;">Type</th>
-			<th style="text-align: center;">Statut</th>
 			<th style="text-align: center;">Offre</th>
+			<th style="text-align: center;">Date de disponibilité</th>
+			<th style="text-align: center;">Adresse</th>
 			<th style="text-align: center;">Prix</th>
 			<th style="text-align: center;">Supprimer | Modifier</th>
 			<th style="text-align: center;">Visualiser le bien</th>
 		</tr>
 
 		<tr ng-repeat="bi in listeBienImmobiliers">
-			<td><img ng-src="data:image/JPEG;base64,{{bi.photoBI}}" width="200"/></td>
+			<td>{{bi.id}}</td>
 			<td>{{bi.classeStandard.type}}</td>
-			<td>{{bi.statut}}</td>
 			<td>{{bi.classeStandard.modeoffre}}</td>
+			<td>{{bi.dateDispo}}</td>
+			<td>{{bi.adresse.numero}} {{bi.adresse.rue}},
+				{{bi.adresse.codePostal}} {{bi.adresse.ville}}</td>
 			<td>{{bi.prix}}</td>
 			<td><a href="#" ng-click="supprimerLink(bi.id)"><span
-					class="glyphicon glyphicon-trash" aria-hidden="true"></span></a> | 
-					<a ng-click="modifierLink(bi)"><span
+					class="glyphicon glyphicon-trash" aria-hidden="true"></span></a> | <a
+				ng-click="modifierLink(bi)"><span
 					class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
-			<td><a ng-click="afficheBiSeul()"><span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span></a></td>
+			<td><a href="#" ng-click="afficherBi(bi)">afficher</a></td>
 		</tr>
 
-	</table> 
-
-
+	</table>
 
 </div>

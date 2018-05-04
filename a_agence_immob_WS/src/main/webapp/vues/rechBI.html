@@ -33,10 +33,16 @@ Id du bien recherche : <input type="number" ng-model="id"></input>
 		</tr>
 
 	</table>
-
+<a target="_blank"
+						href="https://www.geoportail.gouv.fr/carte?c={{lng}},{{lat}}&z=20&l0=ORTHOIMAGERY.ORTHOPHOTOS::GEOPORTAIL:OGC:WMTS(1)&l1=CADASTRALPARCELS.PARCELS::GEOPORTAIL:OGC:WMTS(1)&permalink=yes"><p>cadastre</p></a>
+			
 <h1> Plan google Maps </h1>
 
-<!-- <img src="https://maps.googleapis.com/maps/api/staticmap?center={{lat}},{{lng}}&zoom=12&size=600x400"/> -->
-<img src="https://maps.googleapis.com/maps/api/staticmap?center={{lat}},{{lng}}&markers=color:red%7Clabel:C%7C{{lat}},{{lng}}&zoom=12&size=600x400"/>
+
+<img ng-src="https://maps.googleapis.com/maps/api/staticmap?center={{lat}},{{lng}}&markers=color:red%7Clabel:C%7C{{lat}},{{lng}}&zoom=12&size=600x400&key=AIzaSyC0YbBSL7amcTwd3Z-3WgyTPO5LZsI8Ko0"/>
+
+
+
+
 
 </div>
