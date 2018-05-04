@@ -92,9 +92,14 @@ monApp.config(function($routeProvider){
 						templateUrl: "vues/supprimBi.html"
 					})
 						
-					.when("/searchBi", {
+					.when("/getById", {
 						controller:"recBiCTRL", 
-						templateUrl: "vues/rechercheBi.html"
+						templateUrl: "vues/rechBi.html"
+					})
+					
+					.when("/getbyIdprop", {
+						controller:"recBiPrCTRL", 
+						templateUrl: "vues/rechpropBI.html"
 					})
 					
 					.when("/afficherBiSeul", {

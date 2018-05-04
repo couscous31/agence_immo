@@ -11,7 +11,7 @@ monApp
 	});
 	
 	// 2eme fct du controller : supprimer un bi
-	$scope.supprimerLink = function(id) {
+	$scope.supprimerLink1 = function(id) {
 		
 		//appel de la fonction suppOne du service
 		biService.suppOne(id, function(callBack) {
@@ -29,7 +29,7 @@ monApp
 			id : undefined
 	};
 	
-	$scope.modifierLink = function(bi) {
+	$scope.modifierLink1 = function(bi) {
 		$rootScope.biModif = bi;
 		$location.path("updateBi");
 	};
