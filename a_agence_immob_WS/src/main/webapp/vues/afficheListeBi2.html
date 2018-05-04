@@ -1,8 +1,10 @@
+<div class="centercolumn">
+
 <!-- <input type="checkbox" ng-model="recherche.classeStandard.modeoffre"  ng-true-value="'Achat'" ng-false-value="''" />Acheter -->
 <!-- <input type="checkbox" ng-model="recherche2.classeStandard.modeoffre"  ng-true-value="'Location'" ng-false-value="''" />Louer -->
 
 <div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">Type de bien</label>
+	<label for="exampleInputEmail1" class="col-sm-2 control-label" style="font-size: 17px">Type de bien</label>
 	<div class="col-sm-2">
 		<input type="input" class="form-control" id="type"
 			placeholder="type" ng-model="recherche.classeStandard.type">
@@ -10,40 +12,43 @@
 </div>
 
 <div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">Prestation Acheter ou Louer</label>
+	<label for="exampleInputEmail1" class="col-sm-2 control-label" style="font-size: 17px">Prestation Acheter ou Louer</label>
 	<div class="col-sm-2">
 		<input type="input" class="form-control" id="prestation"
 			placeholder="prestation" ng-model="recherche.classeStandard.modeoffre">
 	</div>
 </div>
 
-<br/>
-<br/>
-<br/>
 
-<label>Surface</label> 
+<div class="form-group">
+<label class="col-sm-2 control-label" style="font-size: 17px" >Surface</label> 
 <select ng-model="recherche.classeStandard.sufacemin">
+<div class="col-sm-2">
 	<option value="">Surface minimale</option>
 	<option ng-repeat="s in listeSurface | orderBy">{{s}}</option>
+	</div>
 </select>
-
-<br/>
-
-<label>Prix</label>
+</div>
+ </br>
+<div class="form-group">
+<label class="col-sm-2 control-label" style="font-size: 17px">Prix</label>
 <select ng-model="recherche.classeStandard.prixmax">
+<div class="col-sm-2">
 	<option value="">Prix maximal</option>
 	<option ng-repeat="p in listePrix | orderBy">{{p}}</option>
+	</div>
 </select>
-
+</div>
 <br/>
-
-<h1 style="color: lightgreen; text-align: center">Liste des biens immobiliers</h1>
+<div style="background-color:#F0F8FF; text-align: center">
+</br>
+<h1 style="color:#6495ED; text-align: center">Liste des biens immobiliers</h1>
 
 <br />
 
 <div align="center" class="table-responsive">
 
-	<table class="table table-hover" style="text-align: center;">
+	<table class="table table-hover" style="text-align: center; font-size: 15px">
 
 		<tr>
 		<th style="text-align: center;">Photo</th>
@@ -64,5 +69,10 @@
 		</tr>
 
 	</table>
+
+</div>
+
+
+</div>
 
 </div>

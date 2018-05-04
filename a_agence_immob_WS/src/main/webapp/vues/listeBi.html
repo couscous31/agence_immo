@@ -65,6 +65,7 @@
 			<th style="text-align: center;">Date de disponibilité</th>
 			<th style="text-align: center;">Adresse</th>
 			<th style="text-align: center;">Prix</th>
+			<th style="text-align: center;">Photo</th>
 			<th style="text-align: center;">Supprimer | Modifier</th>
 			<th style="text-align: center;">Visualiser le bien</th>
 		</tr>
@@ -77,6 +78,7 @@
 			<td>{{bi.adresse.numero}} {{bi.adresse.rue}},
 				{{bi.adresse.codePostal}} {{bi.adresse.ville}}</td>
 			<td>{{bi.prix}}</td>
+			<td><img ng-src="data:image/JPEG;base64,{{bi.photoBI}}" width="200"/></td>
 			<td><a href="#" ng-click="supprimerLink(bi.id)"><span
 					class="glyphicon glyphicon-trash" aria-hidden="true"></span></a> | <a
 				ng-click="modifierLink(bi)"><span

@@ -1,3 +1,5 @@
+<div style="background-color:#F0F8FF; text-align: center" >
+
 <h1 style="text-align: center; color: purple">Ajouter un Bien
 	Immobilier</h1>
 
@@ -23,7 +25,7 @@
 <div class="form-group">
 	<label for="exampleInputEmail1" class="col-sm-2 control-label">Numero</label>
 	<div class="col-sm-10">
-		<input type="number" class="form-control" id="Numero"
+		<input type="text" class="form-control" id="numero"
 			placeholder="numero" ng-model="bienImmobilier.adresse.numero">
 	</div>
 </div>
@@ -164,7 +166,7 @@
 		classe Standard</label>
 	<div class="col-sm-10">
 		<input type="text" class="form-control" id="cs_id" placeholder="cs_id"
-			ng-model="bienImmobilier.cs_id">
+			ng-model="bienImmobilier.classeStandard.id">
 	</div>
 </div>
 
@@ -173,7 +175,7 @@
 		du proprietaire du bien</label>
 	<div class="col-sm-10">
 		<input type="text" class="form-control" id="prop_id"
-			placeholder="prop_id" ng-model="bienImmobilier.prop_id">
+			placeholder="prop_id" ng-model="bienImmobilier.proprietaire.id">
 	</div>
 </div>
 
@@ -183,3 +185,4 @@
 	</div>
 </div>
 </form>
+</div>
