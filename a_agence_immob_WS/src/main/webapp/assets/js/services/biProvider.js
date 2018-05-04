@@ -69,37 +69,8 @@ monApp.factory("biService", function($http) {
 		})
 	}
 	
-	function getAllBi(buscSC) {
-		$http({
-			method : "GET",
-			url : restUrl + "/classeStandard"
-		}).then(function successCallBack(response) {
-					busSC(response.data)
-				},
-				function errorCallBack(response) {
-					console.log("Erreur : ------"+ response.statusText);
-				})
-	}
-
-	function ajoutBi(bi, busSC) {
-		$http({
-			method : "POST",
-			url : restUrl + "/BienImmobilier",
-			data : JSON.stringify(bi),
-			headers : {
-				ContentType : "application/JSON"
-			}
-		}).then(
-				function successCallBack(response) {
-					busSC(response.data)
-				},
-				function errorCallBack(response) {
-					console.log("Erreur : ------"
-							+ response.statusText);
-				})
-	}
-
-	function geoAdresse(rue, codePostal, ville, busSC) {
+	//FONCTION GEOLOCALISATION
+	function geoAdresse(rue, codePostal, ville, bus) {
 		$http(
 				{
 					method : "GET",
@@ -112,7 +83,7 @@ monApp.factory("biService", function($http) {
 							+ "&key=AIzaSyDy1ZKI7FhtHYJx8VEB0GQyjcUoxc2nwy4"
 				}).then(
 				function successCallBack(response) {
-					busSC(response.data)
+					bus(response.data)
 				},
 				function errorCallBack(response) {
 					console.log("Erreur : ------"
@@ -120,6 +91,8 @@ monApp.factory("biService", function($http) {
 				})
 
 }
+	
+	
 	function getByIdProp(id_prop, bus) {
 		$http({
 			method : "GET",
@@ -137,8 +110,8 @@ monApp.factory("biService", function($http) {
 		suppOne: delOne,
 		ajoutOne: addOne,
 		modifOne : updateOne,
-		findAllBi : getAllBi,
-		addBi : ajoutBi, 
+//		findAllBi : getAllBi,
+//		addBi : ajoutBi, 
 		localisationBi : geoAdresse, 
 		getOneprop:getByIdProp
 	}

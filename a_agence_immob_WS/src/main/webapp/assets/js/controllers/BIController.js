@@ -35,14 +35,18 @@ monApp
 	}
 	// fonction appelée via le bouton ajouter
 	$scope.ajouterBi = function() {
+		
 		biService.ajoutOne($scope.bienImmobilier, function(callBack) {
 			if (typeof callBack == "object") {
+								
 				$location.path("findAllBi");
 			} else {
 				$scope.message = "ajout impossible"
 			}
 		})
 	}
+	 
+			
 
 })
 
@@ -112,6 +116,22 @@ monApp
 				$scope.indice = true;
 				$scope.indice1 = false;
 				$scope.propOut = callBack;
+				
+				var adresse=$scope.propOut.adresse;
+				
+				
+
+				 biService.localisationBi(adresse.numero+" "+adresse.rue,adresse.codePostal,adresse.ville,function(callBack) {
+					 
+							 $scope.lat = callBack.results[0].geometry.location.lat;
+							 $scope.lng = callBack.results[0].geometry.location.lng;
+							
+							 console.log($scope.lat);
+							 console.log($scope.lng);
+				 
+					
+				});
+
 			} else {
 				$scope.indice = false
 				$scope.indice1 = true;
@@ -123,22 +143,21 @@ monApp
 	}
 })
 
-.controller("ajoutBiCtrl",function($scope, biService) {
-	 $scope.ajouter = function() {
-	
-	 biService.localisationBi($scope.rue,$scope.codePostal,$scope.ville,function(callBack) {
-		 
-	 $scope.lat = callBack.results[0].geometry.location.lat;
-	 $scope.lng = callBack.results[0].geometry.location.lng;
-	
-	 console.log($scope.lat);
-	 console.log($scope.lng);
-		
-		})
-	}
-
-})
-
+//.controller("ajoutBiCtrl",function($scope, biService) {
+//	 $scope.ajouter = function() {
+//	
+//	 biService.localisationBi($scope.rue,$scope.codePostal,$scope.ville,function(callBack) {
+//		 
+//	 $scope.lat = callBack.results[0].geometry.location.lat;
+//	 $scope.lng = callBack.results[0].geometry.location.lng;
+//	
+//	 console.log($scope.lat);
+//	 console.log($scope.lng);
+//		
+//		})
+//	}
+//
+//})
 
 
 .controller("BiSeulCTRL", function($scope, bienImmobilier, biService, $rootScope, $location) {
@@ -159,9 +178,6 @@ monApp
 })
 
 		
-
-
-
 .controller("recBiPrCTRL", function($scope, biService) {
 	$scope.id_prop;
 	$scope.indice = false;
