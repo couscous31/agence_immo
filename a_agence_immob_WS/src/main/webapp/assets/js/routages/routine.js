@@ -112,7 +112,6 @@ monApp.config(function($routeProvider){
 						templateUrl: "vues/afficheBiSeulCi.html"
 					})
 					
-					
 					//Client
 					.when("/findAllClient", {
 						controller:"listeClientCtrl",
@@ -137,6 +136,12 @@ monApp.config(function($routeProvider){
 					.when("/searchClient", {
 						controller:"recClientCtrl", 
 						templateUrl: "vues/rechClient.html"
+					})
+					
+					// Conseiller immobilier
+					.when("/LoginSpace", { 
+						controller : "LoginController", 
+						templateUrl : "vues/login.html"
 					})
 					
 					.otherwise({
