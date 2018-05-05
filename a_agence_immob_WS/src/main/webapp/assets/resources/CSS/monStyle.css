@@ -1,10 +1,12 @@
+@CHARSET "ISO-8859-1";
+
 /* Création de 2 colonnes */
 
 .body{
 	
 	background-color:white;
 	margin:0%;
-	background-image:url('../assets/resources/images/prague-3010407__340.jpg');
+	background-image:image('../assets/resources/images/prague-3010407__340.jpg');
 	background-size :120%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
