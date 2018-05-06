@@ -10,7 +10,7 @@ monApp
 	            $scope.dataLoading = true;
 	            ciService.Login($scope.idUsername, $scope.mdp, function(response) {
 	                if(typeof response == "object") {
-	                    AuthenticationService.SetCredentials($scope.idUsername, $scope.mdp);
+	                   ciService.SetCredentials($scope.idUsername, $scope.mdp);
 	                    $location.path('listevi');
 	                } else {
 	                    $scope.error = response.message;

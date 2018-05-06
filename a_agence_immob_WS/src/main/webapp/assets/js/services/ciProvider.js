@@ -13,8 +13,8 @@ monApp
 	                    .then(function (response) {
 	                    	console.log(response)
 	                        callback(response.data);
-	                    }, function erreur(response) {
-	            			console.log("Erreur: "+response.statusText)
+	                    }, function erreur(resp) {
+	            			console.log("Erreur: "+resp.statusText)
 	            		});
 
 	            };
