@@ -94,7 +94,7 @@ monApp.config(function($routeProvider){
 						
 					.when("/getById", {
 						controller:"recBiCTRL", 
-						templateUrl: "vues/rechBi.html"
+						templateUrl: "vues/rechBI.html"
 					})
 					
 					.when("/getbyIdprop", {
