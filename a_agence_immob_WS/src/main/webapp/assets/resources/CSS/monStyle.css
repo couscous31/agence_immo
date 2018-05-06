@@ -5,11 +5,13 @@
 .body{
 	
 	background-color:white;
-	margin:0%;
-	background-image:image('../assets/resources/images/prague-3010407__340.jpg');
-	background-size :120%;
-	background-repeat: no-repeat;
+	margin:0 auto;
+	width :1940px;
+	height : 3000px;
+	padding :1em;
+	background-size :100%;
 	background-attachment: fixed;
+
 	
 }
 
