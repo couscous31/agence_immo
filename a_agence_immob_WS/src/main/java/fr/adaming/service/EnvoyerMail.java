@@ -14,12 +14,14 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+import fr.adaming.model.Visite;
+
 
 @Service
 public class EnvoyerMail implements IEnvoyerMail {
 	
 	
-	public  void envoyerMessageAjout(String mailRecup) {
+	public  void envoyerMessageAjout(String mailRecup,Visite vi) {
 	final String username = "wyndy.foy@gmail.com";
 	final String password = "260588WC";
 
@@ -53,7 +55,7 @@ public class EnvoyerMail implements IEnvoyerMail {
 		
 
          // Send the actual HTML message, as big as you like
-         message.setContent("<h1>Félicitations ! Vous avez bien été intégré à notre base de données.</h1>", "text/html");
+         message.setContent("Bonjour nous confirmons que votre visite aura lieu le "+vi.getDatevisite()+ "à" +vi.getHeure()+ "A bientot!", "text/html");
 
          // Send message
          Transport.send(message, message.getAllRecipients());
