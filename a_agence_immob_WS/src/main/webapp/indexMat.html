@@ -9,14 +9,19 @@
 
 <!-- ajouter les libs de bootstrap -->
 <script type="text/javascript" src="assets/resources/js/bootstrap.js"></script>
-<link rel="stylesheet" type="text/css" href="assets/resources/CSS/bootstrap.css" />
+<link rel="stylesheet" type="text/css"
+	href="assets/resources/CSS/bootstrap.css" />
 
 <!-- ajouter les libs de angular js -->
 <script type="text/javascript" src="assets/resources/js/angular.js"></script>
-<script type="text/javascript" src="assets/resources/js/angular-route.js"></script>
-<script type="text/javascript" src="assets/resources/js/angular-locale_fr-fr.js"></script>
-<script type="text/javascript" src="assets/resources/js/angular-base64-upload.js"></script>
-<script type="text/javascript" src="assets/resources/js/angular-cookies.js"></script>
+<script type="text/javascript"
+	src="assets/resources/js/angular-route.js"></script>
+<script type="text/javascript"
+	src="assets/resources/js/angular-locale_fr-fr.js"></script>
+<script type="text/javascript"
+	src="assets/resources/js/angular-base64-upload.js"></script>
+<script type="text/javascript"
+	src="assets/resources/js/angular-cookies.js"></script>
 
 <script type="text/javascript" src="assets/resources/js/monJs.js"></script>
 
@@ -25,48 +30,66 @@
 
 <script type="text/javascript" src="assets/js/routages/routine.js"></script>
 
-<script type="text/javascript" src="assets/js/controllers/Proprietaire.js"></script>
-<script type="text/javascript" src="assets/js/controllers/BIController.js"></script>
-<script type="text/javascript" src="assets/js/controllers/clientController.js"></script>
-<script type="text/javascript" src="assets/js/controllers/contratController.js"></script>
-<script type="text/javascript" src="assets/js/controllers/VisiteControllers.js"></script>
-<script type="text/javascript" src="assets/js/controllers/BIController2.js"></script>
-<script type="text/javascript" src="assets/js/controllers/CIControlleur.js"></script>
+<script type="text/javascript"
+	src="assets/js/controllers/Proprietaire.js"></script>
+<script type="text/javascript"
+	src="assets/js/controllers/BIController.js"></script>
+<script type="text/javascript"
+	src="assets/js/controllers/clientController.js"></script>
+<script type="text/javascript"
+	src="assets/js/controllers/contratController.js"></script>
+<script type="text/javascript"
+	src="assets/js/controllers/VisiteControllers.js"></script>
+<script type="text/javascript"
+	src="assets/js/controllers/BIController2.js"></script>
+<script type="text/javascript"
+	src="assets/js/controllers/CIControlleur.js"></script>
 
-<script type="text/javascript" src="assets/js/services/ProprietaireProvider.js"></script>
+<script type="text/javascript"
+	src="assets/js/services/ProprietaireProvider.js"></script>
 <script type="text/javascript" src="assets/js/services/biProvider.js"></script>
-<script type="text/javascript" src="assets/js/services/clientProvider.js"></script>
-<script type="text/javascript" src="assets/js/services/contratProvider.js"></script>
-<script type="text/javascript" src="assets/js/services/VisiteProvider.js"></script>
+<script type="text/javascript"
+	src="assets/js/services/clientProvider.js"></script>
+<script type="text/javascript"
+	src="assets/js/services/contratProvider.js"></script>
+<script type="text/javascript"
+	src="assets/js/services/VisiteProvider.js"></script>
 <script type="text/javascript" src="assets/js/services/biProvider2.js"></script>
 <script type="text/javascript" src="assets/js/services/ciProvider.js"></script>
 
 <!-- Ajouter le style.css -->
-<link rel="stylesheet" type="text/css" href="assets/resources/CSS/monStyle.css" />
-	
-	
+<link rel="stylesheet" type="text/css"
+	href="assets/resources/CSS/monStyle.css" />
+
+
 </head>
-<body ng-app="monApp" >
-
+<body ng-app="monApp">
 	<div class="header">
-	
-	 <img ng-src="assets/resources/images/Immo-tep.jpg" align="left" height="150" width="150" />
-	 
-	<a href="#!LoginSpace">Espace Conseiller immobilier</a>
-	
-	<h1 style="text-decoration: overline;">Immo-TEP</h1>
-	<h2>(Toulouse Et Périphérie)</h2>
-	
+		<img ng-src="assets/resources/images/Immo-tep.jpg" align="left"
+			height="140" width="140" />
+		<div class="header-right">
+			<a class="active" href="#home">Home</a> 
+			<a href="#contact">Contact</a>
+			<a href="#!LoginSpace">Espace Conseiller immobilier</a>
+		</div>
+		<div>
+		 <h1 style="text-decoration: overline">Immo-TEP<br><small>(Toulouse Et Périphérie)</small></br></h1>
 	</div>
 
-<div class="body" ng-style="{'background-image':'url(assets/resources/images/test.jpg)'}" >
+	<div class="body"
+		ng-style="{'background-image':'url(assets/resources/images/test.jpg)'}">
 
 
 
-	<div class="container">
-		<div ng-view></div>
+		<div class="container">
+			<div ng-view></div>
+		</div>
 	</div>
-</div>
-
+	<div class="footer">
+		<p>Pour connaître la disponibilite de nos agents veuillez nous
+			contacter au : 04-05-06-07-02</p>
+		<p>Agence : 80 avenue Jules Julien 31400 Toulouse
+		<p>
+	</div>
 </body>
 </html>

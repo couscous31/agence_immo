@@ -84,7 +84,7 @@ monApp.config(function($routeProvider){
 						
 					.when("/updateBi", {
 						controller:"modifBiCTRL", 
-						templateUrl: "vues/modifBi.html"
+						templateUrl: "vues/modifBI.html"
 					})
 						
 					.when("/deleteBi", {
