@@ -1,3 +1,70 @@
+<nav class="navbar navbar-inverse" class="header">
+
+	<ul class="nav nav-tabs">
+		<li><a href="#!listevi"><span
+				class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+
+		<li class="dropdown"><a href="#!findAllBi"
+			class="dropdown-toggle" data-toggle="dropdown" role="button"
+			aria-haspopup="true" aria-expanded="false">Proprietaires<span
+				class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="#!findAllProp">Liste des proprietaires</a></li>
+				<li><a href="#!searchProp">Rechercher un proprietaire</a></li>
+				<li role="separator" class="divider"></li>
+				<li><a href="#!addProp">Ajouter</a></li>
+				<li><a href="#!updateProp">Modifier</a></li>
+			</ul></li>
+
+		<li class="dropdown"><a href="#!findAllBi"
+			class="dropdown-toggle" data-toggle="dropdown" role="button"
+			aria-haspopup="true" aria-expanded="false">Clients<span
+				class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="#!findAllClient">Liste des clients</a></li>
+				<li><a href="#!searchClient">Rechercher un client</a></li>
+				<li role="separator" class="divider"></li>
+				<li><a href="#!addClient">Ajouter</a></li>
+				<li><a href="#!updateClient">Modifier</a></li>
+			</ul></li>
+
+		<li class="dropdown"><a href="#!findAllBi"
+			class="dropdown-toggle" data-toggle="dropdown" role="button"
+			aria-haspopup="true" aria-expanded="false">Contrats<span
+				class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="#!findAllContrat">Liste des contrats</a></li>
+				<li role="separator" class="divider"></li>
+				<li><a href="#!addContrat">Ajouter</a></li>
+				<li><a href="#!updateContrat">Modifier</a></li>
+			</ul></li>
+
+		<li class="dropdown"><a href="#!findAllBi"
+			class="dropdown-toggle" data-toggle="dropdown" role="button"
+			aria-haspopup="true" aria-expanded="false">Visites<span
+				class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="#!listevi">Liste des visites</a></li>
+				<li role="separator" class="divider"></li>
+				<li><a href="#!addvi">Ajouter</a></li>
+				<li><a href="#!modifvi">Modifier</a></li>
+				<li><a href="#!suppvi">Supprimer</a></li>
+				<li><a href="#!rechvi">Rechercher</a></li>
+			</ul></li>
+
+		<li class="dropdown"><a href="#!findAllBi"
+			class="dropdown-toggle" data-toggle="dropdown" role="button"
+			aria-haspopup="true" aria-expanded="false">Bien Immobiliers<span
+				class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="#!getById">Rechercher par Id</a></li>
+
+			</ul></li>
+			
+			<li><a href="#!findAllBi2"><span class="glyphicon glyphicon-remove"
+				aria-hidden="true"></span></a></li>
+</nav>
+
 <form>
 Id du proprietaire recherche : <input type="text" ng-model="id_prop"></input>
 <button ng-click="rechercherParIDprop()">Rechercher</button>
