@@ -34,7 +34,8 @@
 .header{
 	text-align: center;
 	text-decoration: inherit;
-    padding: 20px;
+    padding: 25px;
+    height:200px;
     background-image: url(../assets/resources/images/Immo-tep (1).jpg);
     
 /*     image :url('webapp/assets/resources/images/Immo-tep (1).jpg'); */
