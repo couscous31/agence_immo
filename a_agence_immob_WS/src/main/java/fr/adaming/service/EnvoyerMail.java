@@ -2,14 +2,21 @@ package fr.adaming.service;
 
 import java.util.Properties;
 
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+import javax.activation.FileDataSource;
 import javax.mail.Authenticator;
+import javax.mail.BodyPart;
 import javax.mail.Message;
 import javax.mail.MessagingException;
+import javax.mail.Multipart;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
@@ -53,7 +60,6 @@ public class EnvoyerMail implements IEnvoyerMail {
 		message.setSubject("Nouvelle visite");
 		
 		
-
          // Send the actual HTML message, as big as you like
          message.setContent("Bonjour nous confirmons que votre visite aura lieu le "+vi.getDatevisite()+ "à" +vi.getHeure()+ "A bientot!", "text/html");
 

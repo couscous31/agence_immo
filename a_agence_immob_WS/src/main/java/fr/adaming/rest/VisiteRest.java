@@ -50,7 +50,7 @@ public class VisiteRest {
 	//OK
 	@RequestMapping(value = "/addvi", method = RequestMethod.POST, produces = "application/json", consumes = "application/json")
 	public Visite ajouterVisite(@RequestBody Visite vi) {
-		
+		System.out.println(vi.getBienImmo().getId());
 		Visite viOut=viService.addVisite(vi);
 		ConseillerImmobilier consImmo=consService.getConseillerById(vi.getConseillerimmobilier().getId());
 		Client clientImmo=clService.getClientById(vi.getClient().getId());
