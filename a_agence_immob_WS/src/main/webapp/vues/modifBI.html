@@ -60,197 +60,204 @@
 				<li><a href="#!getById">Rechercher par Id</a></li>
 
 			</ul></li>
-			
-			<li><a href="#!findAllBi2"><span class="glyphicon glyphicon-remove"
-				aria-hidden="true"></span></a></li>
+
+		<li><a href="#!findAllBi2"><span
+				class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></li>
 </nav>
 
-<h1 style="text-align: center; color: purple;background-color: #F0F8FF">Modifier un Bien
-	Immobilier</h1>
+<h1 style="text-align: center; color: purple; background-color: #F0F8FF">Modifier
+	un Bien Immobilier</h1>
 <form class="form-horizontal" style="background-color: #F0F8FF">
-<div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">Id</label>
-	<div class="col-sm-10">
-		<input type="text" class="form-control" id="id" placeholder="id"
-			ng-model="bienImmobilier.id">
+	<div class="form-group">
+		<label for="exampleInputEmail1" class="col-sm-2 control-label">Id</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="id" placeholder="id"
+				ng-model="bienImmobilier.id">
+		</div>
 	</div>
-</div>
 
 
 
-<div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">Type</label>
-	<div class="col-sm-10">
-		<select ng-model="bienImmobilier.type" class="form-control">
-			<option value="">Achat</option>
-			<option value="">Location</option>
-		</select>
+	<div class="form-group">
+		<label for="exampleInputEmail1" class="col-sm-2 control-label">Type</label>
+		<div class="col-sm-10">
+			<select ng-model="bienImmobilier.type" class="form-control">
+				<option value="">Achat</option>
+				<option value="">Location</option>
+			</select>
+		</div>
 	</div>
-</div>
 
-<div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">code
-		Postal</label>
-	<div class="col-sm-10">
-		<input type="text" class="form-control" id="codePostal"
-			placeholder="codePostal" ng-model="bienImmobilier.adresse.codePostal">
+	<div class="form-group">
+		<label for="exampleInputEmail1" class="col-sm-2 control-label">code
+			Postal</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="codePostal"
+				placeholder="codePostal"
+				ng-model="bienImmobilier.adresse.codePostal">
+		</div>
 	</div>
-</div>
 
-<div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">Numero</label>
-	<div class="col-sm-10">
-		<input type="number" class="form-control" id="Numero"
-			placeholder="numero" ng-model="bienImmobilier.numero">
+	<div class="form-group">
+		<label for="exampleInputEmail1" class="col-sm-2 control-label">Numero</label>
+		<div class="col-sm-10">
+			<input type="number" class="form-control" id="Numero"
+				placeholder="numero" ng-model="bienImmobilier.adresse.numero">
+		</div>
 	</div>
-</div>
 
-<div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">Rue</label>
-	<div class="col-sm-10">
-		<input type="text" class="form-control" id="rue" placeholder="rue"
-			ng-model="bienImmobilier.adresse.rue">
+	<div class="form-group">
+		<label for="exampleInputEmail1" class="col-sm-2 control-label">Rue</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="rue" placeholder="rue"
+				ng-model="bienImmobilier.adresse.rue">
+		</div>
 	</div>
-</div>
 
-<div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">Ville</label>
-	<div class="col-sm-10">
-		<input type="text" class="form-control" id="ville" placeholder="ville"
-			ng-model="bienImmobilier.adresse.ville">
+	<div class="form-group">
+		<label for="exampleInputEmail1" class="col-sm-2 control-label">Ville</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="ville"
+				placeholder="ville" ng-model="bienImmobilier.adresse.ville">
+		</div>
 	</div>
-</div>
 
-<div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">dateDispo</label>
-	<div class="col-sm-10">
-		<input type="date" class="form-control" id="dateDispo"
-			placeholder="dateDispo" ng-model="bienImmobilier.dateDispo">
+	<div class="form-group">
+		<label for="exampleInputEmail1" class="col-sm-2 control-label">dateDispo</label>
+		<div class="col-sm-10">
+			<input type="date" class="form-control" id="dateDispo"
+				placeholder="dateDispo" ng-model="bienImmobilier.dateDispo">
+		</div>
 	</div>
-</div>
 
-<div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">dateSoumission</label>
-	<div class="col-sm-10">
-		<input type="date" class="form-control" id="dateSoumission"
-			placeholder="dateSoumission" ng-model="bienImmobilier.dateSoumission">
+	<div class="form-group">
+		<label for="exampleInputEmail1" class="col-sm-2 control-label">dateSoumission</label>
+		<div class="col-sm-10">
+			<input type="date" class="form-control" id="dateSoumission"
+				placeholder="dateSoumission"
+				ng-model="bienImmobilier.dateSoumission">
+		</div>
 	</div>
-</div>
 
-<div class="form-group">
-	<label class="col-sm-2 control-label">Choisir la photo du bien</label>
-	<input type="file" ng-model="bienImmobilier.photoBI" accept="image/*"
-		base-sixty-four-input class="form-control"></input>
-</div>
-
-
-<div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">prix</label>
-	<div class="col-sm-10">
-		<input type="text" class="form-control" id="prix"
-			placeholder="prix" ng-model="bienImmobilier.prix">
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Choisir la photo du bien</label>
+		<input type="file" ng-model="bienImmobilier.photoBI" accept="image/*"
+			base-sixty-four-input class="form-control"></input>
 	</div>
-</div>
 
-<div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">revenu Cadastral</label>
-	<div class="col-sm-10">
-		<input type="text" class="form-control" id="revenuCadastral"
-			placeholder="revenuCadastral" ng-model="bienImmobilier.revenuCadastral">
-	</div>
-</div>
 
-<div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">statut</label>
-	<div class="col-sm-10">
-		<select ng-model="bienImmobilier.statut" class="form-control">
-			<option value="">Disponible</option>
-			<option value="">Loue</option>
-			<option value="">Achete</option>
-		</select>
+	<div class="form-group">
+		<label for="exampleInputEmail1" class="col-sm-2 control-label">prix</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="prix" placeholder="prix"
+				ng-model="bienImmobilier.prix">
+		</div>
 	</div>
-</div>
 
-<div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">etat</label>
-	<div class="col-sm-10">
-		<select ng-model="bienImmobilier.etat" class="form-control">
-			<option value="">A Restaurer</option>
-			<option value="">Correct</option>
-			<option value="">Impeccable</option>
-		</select>
+	<div class="form-group">
+		<label for="exampleInputEmail1" class="col-sm-2 control-label">revenu
+			Cadastral</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="revenuCadastral"
+				placeholder="revenuCadastral"
+				ng-model="bienImmobilier.revenuCadastral">
+		</div>
 	</div>
-</div>
 
-<div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">prixAchat</label>
-	<div class="col-sm-10">
-		<input type="text" class="form-control" id="prixAchat"
-			placeholder="prixAchat" ng-model="bienImmobilier.prixAchat">
+	<div class="form-group">
+		<label for="exampleInputEmail1" class="col-sm-2 control-label">statut</label>
+		<div class="col-sm-10">
+			<select ng-model="bienImmobilier.statut" class="form-control">
+				<option value="">Disponible</option>
+				<option value="">Loue</option>
+				<option value="">Achete</option>
+			</select>
+		</div>
 	</div>
-</div>
 
-<div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">caution</label>
-	<div class="col-sm-10">
-		<input type="text" class="form-control" id="caution"
-			placeholder="caution" ng-model="bienImmobilier.caution">
+	<div class="form-group">
+		<label for="exampleInputEmail1" class="col-sm-2 control-label">etat</label>
+		<div class="col-sm-10">
+			<select ng-model="bienImmobilier.etat" class="form-control">
+				<option value="">A Restaurer</option>
+				<option value="">Correct</option>
+				<option value="">Impeccable</option>
+			</select>
+		</div>
 	</div>
-</div>
 
-<div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">charges</label>
-	<div class="col-sm-10">
-		<input type="text" class="form-control" id="charges"
-			placeholder="charges" ng-model="bienImmobilier.charges">
+	<div class="form-group">
+		<label for="exampleInputEmail1" class="col-sm-2 control-label">prixAchat</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="prixAchat"
+				placeholder="prixAchat" ng-model="bienImmobilier.prixAchat">
+		</div>
 	</div>
-</div>
 
-<div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">loyer</label>
-	<div class="col-sm-10">
-		<input type="text" class="form-control" id="loyer"
-			placeholder="loyer" ng-model="bienImmobilier.loyer">
+	<div class="form-group">
+		<label for="exampleInputEmail1" class="col-sm-2 control-label">caution</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="caution"
+				placeholder="caution" ng-model="bienImmobilier.caution">
+		</div>
 	</div>
-</div>
 
-<div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">meubles</label>
-	<div class="col-sm-10">
-		<select ng-model="bienImmobilier.meubles" class="form-control">
-			<option value="">oui</option>
-			<option value="">non</option>
-		</select>
+	<div class="form-group">
+		<label for="exampleInputEmail1" class="col-sm-2 control-label">charges</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="charges"
+				placeholder="charges" ng-model="bienImmobilier.charges">
+		</div>
 	</div>
-</div>
 
-<div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">typeBail</label>
-	<div class="col-sm-10">
-		<input type="text" class="form-control" id="typeBail"
-			placeholder="typeBail" ng-model="bienImmobilier.typeBail">
+	<div class="form-group">
+		<label for="exampleInputEmail1" class="col-sm-2 control-label">loyer</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="loyer"
+				placeholder="loyer" ng-model="bienImmobilier.loyer">
+		</div>
 	</div>
-</div>
 
-<div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">Id classe Standard</label>
-	<div class="col-sm-10">
-		<input type="text" class="form-control" id="cs_id"
-			placeholder="cs_id" ng-model="bienImmobilier.cs_id">
+	<div class="form-group">
+		<label for="exampleInputEmail1" class="col-sm-2 control-label">meubles</label>
+		<div class="col-sm-10">
+			<select ng-model="bienImmobilier.meubles" class="form-control">
+				<option value="">oui</option>
+				<option value="">non</option>
+			</select>
+		</div>
 	</div>
-</div>
 
-<div class="form-group">
-	<label for="exampleInputEmail1" class="col-sm-2 control-label">Id du proprietaire du bien</label>
-	<div class="col-sm-10">
-		<input type="text" class="form-control" id="prop_id"
-			placeholder="prop_id" ng-model="bienImmobilier.prop_id">
+	<div class="form-group">
+		<label for="exampleInputEmail1" class="col-sm-2 control-label">typeBail</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="typeBail"
+				placeholder="typeBail" ng-model="bienImmobilier.typeBail">
+		</div>
 	</div>
-</div>
 
-<div class="form-group">
-	<div class="col-sm-offset-2 col-sm-10">
-		<button class="btn btn-info" ng-click="modifierBi()">Modifier</button>
+	<div class="form-group">
+		<label for="exampleInputEmail1" class="col-sm-2 control-label">Id
+			classe Standard</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="cs_id"
+				placeholder="cs_id" ng-model="bienImmobilier.classeStandard.id">
+		</div>
 	</div>
-</div>
+
+	<div class="form-group">
+		<label for="exampleInputEmail1" class="col-sm-2 control-label">Id
+			du proprietaire du bien</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="prop_id"
+				placeholder="prop_id" ng-model="bienImmobilier.proprietaire.id">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+			<button class="btn btn-info" ng-click="modifierBi()">Modifier</button>
+		</div>
+	</div>
 </form>
+</div>
